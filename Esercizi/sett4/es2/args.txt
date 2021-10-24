@@ -1,0 +1,28 @@
+4
+
+220047 20 4
+Analisi 30 12
+Economia 26 6
+Matematica_Discreta 28 9
+Fisica 30 6
+
+231010 19 4
+Analisi 25 12 
+Economia 24 6 
+Matematica_Discreta 20 9
+Fisica 26 6
+
+199024 21 5
+Analisi 30 12 
+Economia 18 6 
+Matematica_Discreta 25 9
+Fisica 26 6
+Inglese 30 9
+
+299412 23 6
+Analisi 23 12 
+Economia 25 6 
+Matematica_Discreta 20 9
+Fisica 22 6
+Inglese 20 9
+Fondamenti_1 25 12
