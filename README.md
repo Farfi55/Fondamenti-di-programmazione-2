@@ -12,7 +12,7 @@ Vedere un esempio funzionante del problema che hai **quasi** risolto
 
 *non è fatta per copiare gli esercizi difficili*, ma per imparare insieme dagli altri e vedere un modo diverso di approcciare lo stesso problema.
 
-## come orientarsi della repo
+## come orientarsi nella repo
 
 le cartelle esercizi e teoria sono suddivise per settimane, così da essere più organizzati  
 In teoria ci sono le spiegazioni fatte a lezione ma anche alcuni esercizi utili come esempio di quello appena spiegato
