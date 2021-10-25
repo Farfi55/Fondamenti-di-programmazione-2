@@ -30,4 +30,4 @@ cout << nome.substr(10, 6);
 cout << nome.find("chiamo"); // -> 3
 ```
 
-per altri metodi della funzione string consultare https://en.cppreference.com/w/cpp/string
+per altri metodi della funzione string consultare [https://en.cppreference.com/w/cpp/string](https://en.cppreference.com/w/cpp/string)
