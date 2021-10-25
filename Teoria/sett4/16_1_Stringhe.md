@@ -1,9 +1,10 @@
 # Stringhe
 
-![](2021-10-22-08-50-11.png)
+<!-- a ![](2021-10-22-08-50-11.png) -->
+
+overvew molto rapida sulle stringhe in cpp
 
 ```cpp
-
 #include <string>
 using namespace std;
 
@@ -24,4 +25,9 @@ s1.append(" come stai?");
 
 string nome = "Mi chiamo Matteo"
 
+cout << nome.substr(10, 6); 
+
+cout << nome.find("chiamo"); // -> 3
 ```
+
+per altri metodi della funzione string consultare https://en.cppreference.com/w/cpp/string
