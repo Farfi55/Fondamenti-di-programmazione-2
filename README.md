@@ -2,7 +2,7 @@
 
 Per gli studenti dell'UNICAL che seguono il corso di Fondamenti di Programmazione 2 (2021/2022)
 
-## [indice degli argomenti](Theory/0_INDEX.md)
+## [indice degli argomenti](Teoria/0_INDEX.md)
 
 ## a cosa serve
 
@@ -18,7 +18,7 @@ le cartelle esercizi e teoria sono suddivise per settimane, così da essere più
 In teoria ci sono le spiegazioni fatte a lezione ma anche alcuni esercizi utili come esempio di quello appena spiegato
 
 I file sono nominati come:  
-[*NUMERO LEZIONE*]\_[*ARGOMENTO DELLA GIORNATA*]\_[*TITOLO*]  
+*NUMERO LEZIONE*\_*ARGOMENTO DELLA GIORNATA*\_*TITOLO*  
 quindi *15_4_File_multipli.md* è il 4° argomento della 15° lezione (comprese le esercitazioni)
 
 
