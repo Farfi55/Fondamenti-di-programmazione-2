@@ -61,11 +61,14 @@ int main(){
 class Esempio{
 	string *ptr;
 public:
-	Esempio(){}
-	Esempio(){}
+	// costruttori
+	Esempio(): ptr(new string) {};
+	Esempio(const string& str): ptr(new string(str)) {};
 	
-	~Esempio(){}
+	~Esempio() { delete ptr; };
+	Esempio( const Esempio& x): ptr(new string(x.content())) {}
 
+	const string& content() const { return *ptr; }
 
 }
 

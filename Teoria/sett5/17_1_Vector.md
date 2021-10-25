@@ -11,8 +11,8 @@ Cosa servirà:
 ## Progettazione
 
 - `Puntatore per array din.`
-- Size: n. di elementi *"significativi"*
-- Capacità: celle disponibili
+- `Size`: n. di elementi *"significativi"*
+- `Capacità`: celle disponibili
 
 ## Dichiarazione
 
@@ -53,26 +53,23 @@ public:
 	void popBack(); // elimina ultimo elemento
 	void reserve(unsigned int size);
 	void resize (unsigned int size);
-
-
 };
-
-
 #endif
 ```
 
 ## Implementazione
 
 ```cpp
+// costruttori
 template<class R>
-Vector<R>::vector(){
+Vector<R>::vector(){ // di base
 	size = 0;
-	cap = 1; // DISCUTIBILE
+	cap = 2; // DISCUTIBILE
 	vec = new R[cap];	
 }
 
 template<class R>
-Vector<R>::Vector(const Vector<R>& v){
+Vector<R>::Vector(const Vector<R>& v){ // di copia
 	size = v.size;
 	cap = v.cap;
 	vec = new R[cap];
@@ -81,13 +78,15 @@ Vector<R>::Vector(const Vector<R>& v){
 		vec[i] = v.vec[i];
 }
 
+// distruttore
 template<class R>
 Vector<R>::~Vector(){
 	delete [] vec;
 }
+```
 
-//operatori
-
+```cpp
+// implementazione overload operatori
 #include <assert.h>
 
 template<class R>
@@ -120,8 +119,10 @@ R Vector<R>::operator=(const Vector<R>& v) {
 	}
 	return *this;
 }
+```
 
-
+```cpp
+// implementazione metodi
 template<class R>
 void Vector<R>::pushBack(const R& e){
 
@@ -167,8 +168,10 @@ void Vector<R>::resize(unsigned int newSize){
 	reserve(newSize);
 	size = newsize;
 }
+```
 
-
+```cpp
+// operatori di stream input output
 template<class R>
 ostream& operator<<(ostream& out, const Vector<R>& v){
 	out << "(";
@@ -178,6 +181,8 @@ ostream& operator<<(ostream& out, const Vector<R>& v){
 	out << " )\n";
 	return out;
 }
+
+// ... operator>> ...
 
 ```
 
