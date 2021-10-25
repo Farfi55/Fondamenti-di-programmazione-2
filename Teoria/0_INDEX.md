@@ -64,5 +64,12 @@
     - [Costruttore di copia](sett4/15_2_Costruttore_di_copia.md)
     - [Template](sett4/15_3_Template.md)
     - [File multipli](sett4/15_4_File_multipli.md)
+    - [String](sett4/16_1_Stringhe.md)
   
-aggiornato 21/10/21
+- ## Settimana 5
+  
+    - [Vector](sett5/17_1_Vector.md)
+
+### Alcuni siti utili
+
+- https://en.cppreference.com/w/
