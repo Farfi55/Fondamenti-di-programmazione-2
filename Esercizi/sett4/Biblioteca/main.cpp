@@ -6,11 +6,15 @@
 
 using namespace std;
 
-
-
-
 int main() {
 
+	Biblioteca biblioteca = Biblioteca();
+
+	biblioteca.aggiungiLibro(Libro("Alice nel paese delle meraviglie",
+		"Robert Wild;Daniel Winston"));
+
+	
+	
 
 }
 

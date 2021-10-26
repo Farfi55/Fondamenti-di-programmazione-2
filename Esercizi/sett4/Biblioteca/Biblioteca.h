@@ -1,8 +1,11 @@
 #ifndef BIBLIOTECA_H
 #define BIBLIOTECA_H
 
-class Biblioteca{
+#include <assert.h>
+#include "Libro.h"
+#include "Cliente.h"
 
+class Biblioteca{
 
 private:
 	Libro* libri;
@@ -23,16 +26,36 @@ private:
 
 public:
 	Biblioteca();
+	~Biblioteca();
 
 	void aggiungiLibro(Libro libro);
-	void RimuoviLibro(int index);
+	void rimuoviLibro(int index);
 
 	void aggiungiCliente(Cliente cliente);
-	void RimuoviCliente(int index);
+	void rimuoviCliente(int index);
 
-	Libro* cercaLibro(unsigned long ID);
-	Libro* cercaLibro(string Nome);
+	Libro* cercaLibro(unsigned long ID) const;
+	Libro* cercaLibro(string Nome) const;
+
+	Cliente* cercaCliente(unsigned long ID) const;
+	Cliente* cercaCliente(string codiceFiscale) const;
+
 };
+
+Biblioteca::Biblioteca(){
+	capLibri = 4;
+	capClienti = 4;
+
+	sizeLibri = sizeClienti = 0;
+
+	libri = new Libro[capLibri];
+	clienti = new Cliente[capClienti];
+}
+
+Biblioteca::~Biblioteca(){
+	delete [] libri;
+	delete [] clienti;
+}
 
 template<class T>
 void Biblioteca::ridimensionaArray(T* &arr, unsigned& capacity){
@@ -49,13 +72,48 @@ void Biblioteca::ridimensionaArray(T* &arr, unsigned& capacity){
 
 template<class T>
 void Biblioteca::eliminaElemento(T* arr, unsigned& size, unsigned index){
-	for(int i = index; i < size-1; i++);
+	for(int i = index; i < size-1; i++)
 		arr[i] = arr[i+1];
 
 	size--;
 }
 
-//void Biblioteca::aggiungiLibro(Libro)
+void Biblioteca::aggiungiLibro(Libro libro){
+	if(sizeLibri == capLibri)
+		ridimensionaArray(libri, capLibri);
+
+	libri[sizeLibri] = libro;
+	sizeLibri++;
+}
+
+void Biblioteca::aggiungiCliente(Cliente cliente){
+	if(sizeClienti == capClienti)
+		ridimensionaArray(clienti, capClienti);
+
+	clienti[sizeClienti] = cliente;
+	sizeClienti++;
+}
+
+void Biblioteca::rimuoviLibro(int index){
+	assert(index >= 0 && index < sizeLibri);
+
+	eliminaElemento(libri, sizeLibri, index);
+}
+
+void Biblioteca::rimuoviCliente(int index){
+	assert(index >= 0 && index < sizeClienti);
+
+	eliminaElemento(clienti, sizeClienti, index);
+}
+
+// Libro* cercaLibro(unsigned long ID) const;
+// Libro* cercaLibro(string Nome) const;
+
+// Cliente* cercaCliente(unsigned long ID) const;
+// Cliente* cercaCliente(string codiceFiscale) const;
+
+
+
 
 
 #endif
