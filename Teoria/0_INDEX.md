@@ -65,6 +65,8 @@
 ## Settimana 5
 
 - [Vector](sett5/17_1_Vector.md)
+- [Ereditarietà](sett5/18_2_Ereditarieta.md)
+- [Poliformismo](sett5/)
 
 ## Alcuni siti utili
 
