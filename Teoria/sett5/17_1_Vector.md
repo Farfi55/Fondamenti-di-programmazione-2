@@ -37,7 +37,7 @@ public:
 	unsigned int capacity() const { return cap; };
 	R& operator[](unsigned int i); // versione (default, read-write)
 	R operator[](unsigned int i) const; // versione per oggetti costanti (read-only)
-	Vector& operator= (const Vector<R>&); // overload dell'assegnazione
+	Vector<R>& operator= (const Vector<R>&); // overload dell'assegnazione
 	void pushBack(const R&); // aggiungi elemento in fondo
 	const R& back() const; // leggi ultimo elemento
 	void popBack(); // elimina ultimo elemento

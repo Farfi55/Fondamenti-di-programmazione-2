@@ -235,7 +235,7 @@ ___
 class Dummy{
 public:
 	bool isItMe(Dummy & param){
-		if (param == this)
+		if (param == *this)
 			return true;
 		else
 			return false;
@@ -245,6 +245,7 @@ public:
 int main(){
 	Dummy a;
 	Dummy *b = &a;
+
 
 	if(b->isItMe(a))
 		cout << "Sono io!";
