@@ -1,5 +1,14 @@
 # Friend
 
+- [Friend](#friend)
+	- [Problema](#problema)
+	- [Uso di friend](#uso-di-friend)
+		- [usando `friend` su un metodo](#usando-friend-su-un-metodo)
+		- [usando `friend` su un'altra classe](#usando-friend-su-unaltra-classe)
+	- [risolvere conflitti dipendenza circolare](#risolvere-conflitti-dipendenza-circolare)
+
+## Problema
+
 ```cpp
 class Rectangle{
 	int width, height;
@@ -16,6 +25,8 @@ Rectangle duplicate(const Rectangle& param){
 	return rec;
 }
 ```
+
+## Uso di friend
 
 ### usando `friend` su un metodo
 
@@ -79,6 +90,24 @@ int main(){
 	cout << rect.area(); // 4*4 = 16
 
 }
-
-
 ```
+
+## risolvere conflitti dipendenza circolare
+
+1. se scriviamo tutto in un unico file
+possiamo usare il prototipo di classe
+
+	```cpp
+	class Square;
+	```
+
+2. se utilizziamo più file
+
+	```cpp
+	#ifndef NOMECLASSE_H
+	#define NOMECLASSE_H
+	class nomeClasse{
+		...
+	}
+	#endif 
+	```
