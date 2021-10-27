@@ -4,7 +4,10 @@
 /cmake-build-debug
 /CMakeLists.txt
 /misc
-/*tempCodeRunnerFile.*
 /*.pdf
 /*.html
 *test*
+*tempCodeRunnerFile.*
+Implementazioni/main.cpp
+*.exe
+
