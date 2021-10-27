@@ -18,7 +18,7 @@ class Cliente {
 
     // if(LibroPresoInPrestito != nullptr)
 
-    bool deveRestituireLibro = false;
+    bool _deveRestituireLibro = false;
 
    public:
     Cliente();
@@ -29,12 +29,15 @@ class Cliente {
     string getNome() const { return nome; }
     string getCognome() const { return cognome; }
     string getCodiceFiscale() const { return codiceFiscale; }
+    bool deveRestituireLibro() const { return _deveRestituireLibro; }
+
 
     void setNome(string nome) { this->nome = nome; }
     void setCognome(string cognome) { this->cognome = cognome; }
     void setCodiceFiscale(string codiceFiscale) {
         this->codiceFiscale = codiceFiscale;
     }
+    void setDeveRestituireLibro(bool value) { _deveRestituireLibro = value; }
 
     Cliente operator=(const Cliente&);
 };

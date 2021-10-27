@@ -38,6 +38,8 @@ public:
 	bool isDisponibile() const { return disponibile; }
 	Cliente* getPrestatoA() const { return prestatoA; }
 
+	bool presta(Cliente* cliente);
+	bool riconsegna(Cliente* cliente);
 
 	Libro operator=(const Libro&);
 };
@@ -76,6 +78,28 @@ Libro Libro::operator=(const Libro& libro){
 
 	return *this;
 }
+
+bool Libro::presta(Cliente* cliente){
+	if(disponibile && !cliente->deveRestituireLibro()){
+		disponibile = false;
+		prestatoA = cliente;
+		cliente->setDeveRestituireLibro(true);
+		return true;
+	}
+	else return false;
+}
+	
+	
+bool Libro::riconsegna(Cliente* cliente){
+	if(!disponibile && cliente->deveRestituireLibro() && prestatoA == cliente){
+		disponibile = true;
+		prestatoA = nullptr;
+		cliente->setDeveRestituireLibro(false);
+		return true;
+	}
+	else return false;
+}
+
 
 
 #endif 

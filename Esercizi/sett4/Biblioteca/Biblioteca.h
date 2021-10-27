@@ -5,6 +5,9 @@
 #include "Libro.h"
 #include "Cliente.h"
 #include <vector>
+#include <iostream>
+
+using namespace std;
 
 class Biblioteca{
 
@@ -42,6 +45,12 @@ public:
 	Cliente* cercaCliente(unsigned long ID) const;
 	Cliente* cercaCliente(string codiceFiscale) const;
 
+	bool prestito(Libro* libro, Cliente* cliente);
+	bool riconsegna(Libro* libro, Cliente* cliente);
+
+
+	void stampaLibri() const;
+	void stampaClienti() const;
 
 	void stampaLibriInPrestito() const;
 	void stampaClientiCheDevonoRestituireLibro() const;
@@ -112,12 +121,65 @@ void Biblioteca::rimuoviCliente(int index){
 	eliminaElemento(clienti, sizeClienti, index);
 }
 
-// Libro* cercaLibro(unsigned long ID) const;
-// Libro* cercaLibro(string Nome) const;
+Libro* Biblioteca::cercaLibro(unsigned long ID) const {
+	for(int i = 0; i < sizeLibri; i++)
+		if(libri[i].getID() == ID)
+			return &libri[i];
+	
+	return nullptr;
+}
 
-// Cliente* cercaCliente(unsigned long ID) const;
-// Cliente* cercaCliente(string codiceFiscale) const;
 
+Libro* Biblioteca::cercaLibro(string Nome) const {
+	for(int i = 0; i < sizeLibri; i++)
+		if(libri[i].getNome() == Nome)
+			return &libri[i];
+
+	return nullptr;
+}
+
+Cliente* Biblioteca::cercaCliente(unsigned long ID) const {
+	for(int i = 0; i < sizeClienti; i++)
+		if(clienti[i].getID() == ID)
+			return &clienti[i];
+
+	return nullptr;
+}
+
+Cliente* Biblioteca::cercaCliente(string codiceFiscale) const {
+	for(int i = 0; i < sizeClienti; i++)
+		if(clienti[i].getCodiceFiscale() == codiceFiscale)
+			return &clienti[i];
+
+	return nullptr;
+}
+
+bool Biblioteca::prestito(Libro* libro, Cliente* cliente){
+	return libro->presta(cliente);
+}
+
+bool Biblioteca::riconsegna(Libro* libro, Cliente* cliente){
+	return libro->riconsegna(cliente);
+}
+
+void Biblioteca::stampaLibri() const {
+	for(int i = 0; i < sizeLibri; i++){
+		cout << "ID: " << libri[i].getID() << endl; 
+		cout << "Nome: " << libri[i].getNome() << endl; 
+		cout << "Autori: " << libri[i].getAutori() << endl; 
+		cout << "Casa editrice: " << libri[i].getCasaEditrice() << endl << endl; 
+	}
+}
+
+
+void Biblioteca::stampaClienti() const {
+	for(int i = 0; i < sizeClienti; i++){
+		cout << "ID: " << clienti[i].getID() << endl;
+		cout << "Nome: " << clienti[i].getNome() << endl;
+		cout << "Cognome: " << clienti[i].getCognome() << endl;
+		cout << "Codice fiscale: " << clienti[i].getCodiceFiscale() << endl << endl;
+	}
+}
 
 void Biblioteca::stampaLibriInPrestito() const {
 	for(int i = 0; i < sizeLibri; i++)
@@ -126,19 +188,19 @@ void Biblioteca::stampaLibriInPrestito() const {
 			cout << "Autori: " << libri[i].getAutori() << endl; 
 			cout << "Casa editrice: " << libri[i].getCasaEditrice() << endl; 
 			cout << "Prestato a: " << libri[i].getPrestatoA()->getNome()
-				 << " " << libri[i].getPrestatoA()->getCognome() << endl;
+				 << " " << libri[i].getPrestatoA()->getCognome() << endl << endl;
 		}
 }
 
 void Biblioteca::stampaClientiCheDevonoRestituireLibro() const {
 	for(int i = 0; i < sizeLibri; i++)
-		if(libri[i].isDisponibile()){
-			Cliente* cliente = libri[i].getPrestatoA()
+		if(!libri[i].isDisponibile()){
+			Cliente* cliente = libri[i].getPrestatoA();
 			cout << "Nome: " << cliente->getNome() << endl;
 			cout << "Cognome: " << cliente->getCognome() << endl;
 			cout << "Codice fiscale: " << cliente->getCodiceFiscale() << endl;
 
-			cout << "ha preso in prestito: " << libri[i].getNome() << endl; 
+			cout << "ha preso in prestito: " << libri[i].getNome() << endl << endl; 
 		}	
 }
 
