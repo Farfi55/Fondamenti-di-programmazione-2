@@ -65,8 +65,12 @@
 ## Settimana 5
 
 - [Vector](sett5/17_1_Vector.md)
-- [Ereditarietà](sett5/18_2_Ereditarieta.md)
-- [Poliformismo](sett5/)
+- [STL](sett5/18_1_STL.md)
+  - [std::vector](sett5/18_1_STL.md/#vector)
+  - [std::string](sett5/18_1_STL.md/#string)
+- [Friend](sett5/18_2_Friend.md)
+<!-- - [Ereditarietà](sett5/)
+  - [Poliformismo](sett5/) -->
 
 ## Alcuni siti utili
 
