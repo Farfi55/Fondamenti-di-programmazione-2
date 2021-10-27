@@ -44,16 +44,16 @@ class Cliente {
 unsigned Cliente::IDCounter = 0;
 
 Cliente::Cliente() {
-    IDCounter += (nome.size() + cognome.size()) % 10;
+    IDCounter += 1 + (nome.size() + cognome.size()) % 20;
     ID = IDCounter;
 
-    nome = "";
-    cognome = "";
-    codiceFiscale = "";
+    nome = "ND";
+    cognome = "ND";
+    codiceFiscale = "ND";
 }
 
 Cliente::Cliente(string nome, string cognome, string codiceFiscale) {
-    IDCounter += (nome.size() + cognome.size()) % 10;
+    IDCounter += 1 + (nome.size() + cognome.size()) % 20;
     ID = IDCounter;
 
 
@@ -69,6 +69,7 @@ Cliente::Cliente(const Cliente& cliente) {
 	this->codiceFiscale = cliente.codiceFiscale;
 }
 
+
 Cliente Cliente::operator=(const Cliente& cliente) {
     this->ID = cliente.ID;
     this->nome = cliente.nome;
@@ -77,5 +78,11 @@ Cliente Cliente::operator=(const Cliente& cliente) {
 
     return *this;
 }
+
+// Cliente Cliente::operator=(const Cliente& cliente) {
+//     *this = Cliente(cliente);
+
+//     return *this;
+// }
 
 #endif

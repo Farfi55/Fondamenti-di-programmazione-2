@@ -47,18 +47,18 @@ unsigned long Libro::IDCounter = 0;
 
 
 Libro::Libro() {
-	IDCounter += ((int)nome[0] + nome.size()) % 10;
+	IDCounter += 1 + ((int)nome[0] + nome.size()) % 20;
 	ID = IDCounter;
 
-	this->nome = "";
-	this->autori = "";
-	this->casaEditrice = "";
+	this->nome = "ND";
+	this->autori = "ND";
+	this->casaEditrice = "ND";
 
 }
 
 
 Libro::Libro(string nome, string autori, string casaEditrice) {
-	IDCounter += ((int)nome[0] + nome.size()) % 10;
+	IDCounter += 1 + ((int)nome[0] + nome.size()) % 20;
 	ID = IDCounter;
 
 	this->nome = nome;

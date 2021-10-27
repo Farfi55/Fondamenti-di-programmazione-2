@@ -33,6 +33,9 @@ public:
 	Biblioteca();
 	~Biblioteca();
 
+	Libro& libroA(int index) const { return libri[index]; }
+	Cliente& clienteA(int index) const { return clienti[index]; }
+
 	void aggiungiLibro(Libro libro);
 	void rimuoviLibro(int index);
 
@@ -41,9 +44,14 @@ public:
 
 	Libro* cercaLibro(unsigned long ID) const;
 	Libro* cercaLibro(string Nome) const;
+	int indiceDiLibro(unsigned long ID) const;
+	int indiceDiLibro(string Nome) const;
 
 	Cliente* cercaCliente(unsigned long ID) const;
 	Cliente* cercaCliente(string codiceFiscale) const;
+	int indiceDiCliente(unsigned long ID) const;
+	int indiceDiCliente(string codiceFiscale) const;
+
 
 	bool prestito(Libro* libro, Cliente* cliente);
 	bool riconsegna(Libro* libro, Cliente* cliente);
@@ -121,38 +129,66 @@ void Biblioteca::rimuoviCliente(int index){
 	eliminaElemento(clienti, sizeClienti, index);
 }
 
-Libro* Biblioteca::cercaLibro(unsigned long ID) const {
+
+
+int Biblioteca::indiceDiLibro(unsigned long ID) const {
 	for(int i = 0; i < sizeLibri; i++)
 		if(libri[i].getID() == ID)
-			return &libri[i];
-	
-	return nullptr;
+			return i;
+	return -1;
 }
 
-
-Libro* Biblioteca::cercaLibro(string Nome) const {
+int Biblioteca::indiceDiLibro(string Nome) const {
 	for(int i = 0; i < sizeLibri; i++)
 		if(libri[i].getNome() == Nome)
-			return &libri[i];
-
-	return nullptr;
+			return i;
+	return -1;
 }
 
-Cliente* Biblioteca::cercaCliente(unsigned long ID) const {
+
+
+int Biblioteca::indiceDiCliente(unsigned long ID) const {
 	for(int i = 0; i < sizeClienti; i++)
 		if(clienti[i].getID() == ID)
-			return &clienti[i];
+			return i;
+	return -1;
+}
 
-	return nullptr;
+int Biblioteca::indiceDiCliente(string codiceFiscale) const {
+	for(int i = 0; i < sizeClienti; i++)
+		if(clienti[i].getCodiceFiscale() == codiceFiscale)
+			return i;
+	return -1;
+}
+
+
+
+Libro* Biblioteca::cercaLibro(unsigned long ID) const {
+	int index = indiceDiLibro(ID);
+	if(index == -1) return nullptr;
+	else return &libri[index];
+}
+
+Libro* Biblioteca::cercaLibro(string Nome) const {
+	int index = indiceDiLibro(Nome);
+	if(index == -1) return nullptr;
+	else return &libri[index]; 
+}
+
+
+Cliente* Biblioteca::cercaCliente(unsigned long ID) const {
+	int index = indiceDiCliente(ID);
+	if(index == -1) return nullptr;
+	else return &clienti[index]; 
 }
 
 Cliente* Biblioteca::cercaCliente(string codiceFiscale) const {
-	for(int i = 0; i < sizeClienti; i++)
-		if(clienti[i].getCodiceFiscale() == codiceFiscale)
-			return &clienti[i];
-
-	return nullptr;
+	int index = indiceDiCliente(codiceFiscale);
+	if(index == -1) return nullptr;
+	else return &clienti[index]; 
 }
+
+
 
 bool Biblioteca::prestito(Libro* libro, Cliente* cliente){
 	return libro->presta(cliente);
@@ -163,21 +199,23 @@ bool Biblioteca::riconsegna(Libro* libro, Cliente* cliente){
 }
 
 void Biblioteca::stampaLibri() const {
+	cout << "------------- LIBRI -------------\n";
 	for(int i = 0; i < sizeLibri; i++){
-		cout << "ID: " << libri[i].getID() << endl; 
-		cout << "Nome: " << libri[i].getNome() << endl; 
-		cout << "Autori: " << libri[i].getAutori() << endl; 
-		cout << "Casa editrice: " << libri[i].getCasaEditrice() << endl << endl; 
+		cout << "["<<i<<"]\tID: " << libri[i].getID() << endl; 
+		cout << " |\tNome: " << libri[i].getNome() << endl; 
+		cout << " |\tAutori: " << libri[i].getAutori() << endl; 
+		cout << " |\tCasa editrice: " << libri[i].getCasaEditrice() << endl; 
 	}
 }
 
 
 void Biblioteca::stampaClienti() const {
+	cout << "------------ CLIENTI ------------\n";
 	for(int i = 0; i < sizeClienti; i++){
-		cout << "ID: " << clienti[i].getID() << endl;
-		cout << "Nome: " << clienti[i].getNome() << endl;
-		cout << "Cognome: " << clienti[i].getCognome() << endl;
-		cout << "Codice fiscale: " << clienti[i].getCodiceFiscale() << endl << endl;
+		cout << "["<<i<<"]\tID: " << clienti[i].getID() << endl;
+		cout << " |\tNome: " << clienti[i].getNome() << endl;
+		cout << " |\tCognome: " << clienti[i].getCognome() << endl;
+		cout << " |\tCodice fiscale: " << clienti[i].getCodiceFiscale() << endl;
 	}
 }
 
