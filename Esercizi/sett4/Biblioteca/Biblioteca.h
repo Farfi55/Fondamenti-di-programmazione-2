@@ -4,10 +4,12 @@
 #include <assert.h>
 #include "Libro.h"
 #include "Cliente.h"
+#include <vector>
 
 class Biblioteca{
 
 private:
+
 	Libro* libri;
 	unsigned sizeLibri;
 	unsigned capLibri;
@@ -39,6 +41,10 @@ public:
 
 	Cliente* cercaCliente(unsigned long ID) const;
 	Cliente* cercaCliente(string codiceFiscale) const;
+
+
+	void stampaLibriInPrestito() const;
+	void stampaClientiCheDevonoRestituireLibro() const;
 
 };
 
@@ -113,6 +119,28 @@ void Biblioteca::rimuoviCliente(int index){
 // Cliente* cercaCliente(string codiceFiscale) const;
 
 
+void Biblioteca::stampaLibriInPrestito() const {
+	for(int i = 0; i < sizeLibri; i++)
+		if(!libri[i].isDisponibile()){
+			cout << "Nome: " << libri[i].getNome() << endl; 
+			cout << "Autori: " << libri[i].getAutori() << endl; 
+			cout << "Casa editrice: " << libri[i].getCasaEditrice() << endl; 
+			cout << "Prestato a: " << libri[i].getPrestatoA()->getNome()
+				 << " " << libri[i].getPrestatoA()->getCognome() << endl;
+		}
+}
+
+void Biblioteca::stampaClientiCheDevonoRestituireLibro() const {
+	for(int i = 0; i < sizeLibri; i++)
+		if(libri[i].isDisponibile()){
+			Cliente* cliente = libri[i].getPrestatoA()
+			cout << "Nome: " << cliente->getNome() << endl;
+			cout << "Cognome: " << cliente->getCognome() << endl;
+			cout << "Codice fiscale: " << cliente->getCodiceFiscale() << endl;
+
+			cout << "ha preso in prestito: " << libri[i].getNome() << endl; 
+		}	
+}
 
 
 
