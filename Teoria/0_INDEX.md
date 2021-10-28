@@ -70,8 +70,16 @@
   - [std::string](sett5/18_1_STL.md/#string)
 - [Friend](sett5/18_2_Friend.md)
   - [conflitti circolari](sett5/18_2_Friend.md/#risolvere-conflitti-dipendenza-circolare)
-- [Ereditarietà](sett5/18_3_Ereditarieta.md)
+- [Ereditarietà(1)](sett5/18_3_Ereditarieta1.md)
+- [Ereditarietà(2)](sett5/19_1_Ereditarieta2.md)
+  
+
 <!-- - [Poliformismo](sett5/) -->
+
+## Implementazioni
+
+- [Vector](../Implementazioni/Vector/Vector.h)
+- [Insieme](../Implementazioni/Insieme/Insieme.h)
 
 ## Alcuni siti utili
 

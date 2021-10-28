@@ -73,3 +73,27 @@ public:
 }
 
 ```
+
+## Extra
+
+aggiunto in data 28/10/2021
+
+```cpp
+
+void f(insieme<T> s) 
+{....}
+
+int main(){
+
+	insieme<int> s1;
+	... metti dentro qualcosa in s1 ...
+
+
+	insieme <int> s2 = s1; // chiamata al costruttore di copia
+
+
+	f(s1); // chiamata al costruttore di copia
+
+
+}
+
