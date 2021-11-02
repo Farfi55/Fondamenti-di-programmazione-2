@@ -11,6 +11,7 @@ ostream& operator<< (ostream& out, const Studente& stud){
 	return out;
 }
 
+
 istream& operator>> (istream& in, Studente& stud){
 	cout << "inserisci matricola: ";
 	string matricola; in >> matricola; stud.setMatricola(matricola);
@@ -39,11 +40,13 @@ Studente::Studente(){
 	esami_sostenuti = 0;
 }
 
+
 Studente::Studente(string matricola, unsigned eta){
 	this->matricola = matricola;
 	this->eta = eta;
 	esami_sostenuti = 0;
 }
+
 
 void Studente::aggiungiEsame(string esame, unsigned voto, unsigned cfu){
 	if(esami_sostenuti == 24) return;
@@ -54,6 +57,7 @@ void Studente::aggiungiEsame(string esame, unsigned voto, unsigned cfu){
 	++esami_sostenuti;
 }
 
+
 void Studente::rimuoviUltimoEsame(){
 	if(esami_sostenuti == 0) return;
 
@@ -62,6 +66,7 @@ void Studente::rimuoviUltimoEsame(){
 	voti_esami[esami_sostenuti] = 0;
 	cfu_esami[esami_sostenuti] = 0;
 }
+
 
 float Studente::getMediaVoti() const {
 	if(esami_sostenuti == 0) return 0;
@@ -73,6 +78,7 @@ float Studente::getMediaVoti() const {
 
 	return somma/esami_sostenuti;
 }
+
 
 float Studente::getMediaPonderata() const {
 	if(esami_sostenuti == 0) return 0;
@@ -93,11 +99,9 @@ unsigned Studente::getVotoPiuBasso() const {
 	unsigned voto_minore = voti_esami[0];
 
 	for (int i = 0; i < esami_sostenuti; i++)
-	{
 		if(voti_esami[i] < voto_minore)
 			voto_minore = voti_esami[i];
-	}
-
+			
 	return voto_minore;
 }
 
@@ -114,8 +118,8 @@ unsigned Studente::getVotoPiuAlto() const {
 	}
 
 	return voto_maggiore;
-
 }
+
 
 unsigned Studente::getVotoI(unsigned i) const {
 	if(i >= esami_sostenuti ) return 0;

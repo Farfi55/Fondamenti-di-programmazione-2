@@ -1,6 +1,7 @@
+#include <iostream>
+#include <limits>
 #include "Studente.cpp"
 
-#include <iostream>
 
 using namespace std;
 
@@ -99,26 +100,29 @@ bool stessiVoti(const Studente& s1, const Studente& s2){
 	return true;
 }
 
-
 string getMatricolaStudenteGiovaneEBravo(Studente studenti[], unsigned numeroStudenti){
-
-	bool piuStudentiConStessaMedia = false;
 	float mediaMigliore = 0;
-	unsigned indiceMigliorStudente = -1;
+	unsigned eta = numeric_limits<unsigned>::max();
+	string matricola = "- - -";
 
 
 	for (int i = 0; i < numeroStudenti; ++i){
-		if (studenti[i].getEta() <= 20 && studenti[i].getEsamiSostenuti() > 3)	{
-			if(studenti[i].getMediaVoti() > mediaMigliore){
+		if (studenti[i].getEta() <= 20 && studenti[i].getEsamiSostenuti() >= 3)	{
+			// if(studenti[i].getMediaVoti() > mediaMigliore){
+			// 	mediaMigliore = studenti[i].getMediaVoti();
+			// 	indiceMigliorStudente = i;
+			// }
+			// else if(studenti[i].getMediaVoti() == mediaMigliore)
+			// 	if(studenti[i].getEta() < studenti[indiceMigliorStudente].getEta())
+			// 		indiceMigliorStudente = i;
+			if(studenti[i].getMediaVoti() > mediaMigliore 
+			|| (studenti[i].getMediaVoti() == mediaMigliore && studenti[i].getEta() < eta)){
 				mediaMigliore = studenti[i].getMediaVoti();
-				indiceMigliorStudente = i;
+				eta = studenti[i].getEta();
+				matricola = studenti[i].getMatricola();
 			}
-			else if(studenti[i].getMediaVoti() == mediaMigliore)
-				if(studenti[i].getEta() < studenti[indiceMigliorStudente].getEta())
-					indiceMigliorStudente = i;
 		}
 	}
 
-	if(indiceMigliorStudente == -1) return "- - -";
-	else return studenti[indiceMigliorStudente].getMatricola();
+	return matricola;
 }
