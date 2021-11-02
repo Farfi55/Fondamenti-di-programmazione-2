@@ -72,9 +72,8 @@
   - [conflitti circolari](sett5/18_2_Friend.md/#risolvere-conflitti-dipendenza-circolare)
 - [Ereditarietà(1)](sett5/18_3_Ereditarieta1.md)
 - [Ereditarietà(2)](sett5/19_1_Ereditarieta2.md)
-  
 
-<!-- - [Poliformismo](sett5/) -->
+<!-- ## Settimana 6 -->
 
 ## Implementazioni
 
@@ -85,7 +84,9 @@
 
 - [cppreference](https://en.cppreference.com/w/)
 - [git-hub della repo](https://github.com/Farfi55/Fondamenti-di-programmazione-2)
-- [Game Programming patterns](http://gameprogrammingpatterns.com/contents.html) *(libro gratis online, consigliatissimo)*
-- [Design Patterns](https://refactoring.guru/design-patterns)
-- [semplice tutorial sul Markdown](https://guides.github.com/features/mastering-markdown/)
-- [docs markdown (GitHub)](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
+- Design patterns
+    - [Game Programming patterns](http://gameprogrammingpatterns.com/contents.html) *(libro gratis online, consigliatissimo)*
+    - [Design Patterns](https://refactoring.guru/design-patterns)
+- Guide veloci su come scrivere markdown:
+    - [semplice tutorial sul Markdown](https://guides.github.com/features/mastering-markdown/)
+    - [docs markdown (GitHub)](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax)
