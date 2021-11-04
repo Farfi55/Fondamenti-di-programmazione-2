@@ -76,8 +76,9 @@
 ## Settimana 6
 
 - [Contenitori](sett6/21_1_Contenitori.md)
-  - [forward list *(lista)*](sett6/21_2_forward_list.md)
-  - []()
+  - [Forward list *(lista)*](sett6/21_2_forward_list.md)
+  - [Doubly-linked list *(liste bidirezionali)*](sett6/21_3_Doubly_linked_list.md)
+  - [Ordered list *(liste ordinate)*](sett6/21_4_OrderedList.md)
 - [Iterator](sett6/21_5_Iterator.md)
 
 ## Implementazioni
