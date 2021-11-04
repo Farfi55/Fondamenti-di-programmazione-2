@@ -65,7 +65,7 @@ void eliminaSomma(list<int>&, int x) {
 ```
 
 ## Sito da usare per references:
-Cplusplus: https://www.cpluspluc.com/reference/
+Cplusplus: https://www.cplusplus.com/reference/
 
 ## Stack e code
 ### Stack: 
