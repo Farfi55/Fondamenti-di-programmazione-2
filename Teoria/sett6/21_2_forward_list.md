@@ -74,9 +74,8 @@ ___
 ```cpp
 template<class T>
 bool List::empty() const { return first == nullptr; }
-```
 
-```cpp
+
 template<class T>
 List::~List(){
 	if(first == nullptr) return;
@@ -90,18 +89,16 @@ List::~List(){
 		delete tmp;
 	}
 }
-```
 
-```cpp
+
 template<class T>
 Node<T>* List<T>::newNode(const T& v) {
 	Node<T>* ptr = new Node<T>(v);
 	assert(ptr != 0);
 	return ptr;
 }
-```
 
-```cpp
+
 template<class T>
 void List<T>::pushFront(const T& v){
 	Node<T>* n = newNode<T>(v);
@@ -114,9 +111,8 @@ void List<T>::pushFront(const T& v){
 		first = n;
 	}
 }
-```
 
-```cpp
+
 template<class T>
 void List<T>::pushBack(const T& v){
 	Node<T>* n = newNode<T>(v);
@@ -128,9 +124,8 @@ void List<T>::pushBack(const T& v){
 		last = n;
 	}
 }
-```
 
-```cpp
+
 template<class T>
 bool List<T>::popFront(T& v){
 	if(empty())
@@ -148,13 +143,9 @@ bool List<T>::popFront(T& v){
 	return true;
 }
 
-```
 <!-- TODO: IMPLEMENTARE popBack() -->
-```cpp
 
-```
 
-```cpp
 template<class T>
 bool List<T>::find(const T& v) const {
 	Node<T>* ptr = first;
@@ -165,9 +156,7 @@ bool List<T>::find(const T& v) const {
 	}
 	return false;
 }
-```
 
-```cpp
 template<class T>
 void List<T>::deleteNode(Node<T>& pos) const {
 	assert(!empty());

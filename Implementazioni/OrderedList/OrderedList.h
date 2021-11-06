@@ -1,14 +1,14 @@
-# Ordered list
+#ifndef ORDERED_LIST_H
+#define ORDERED_LIST_H
 
-senza riscrivere tutto quanto, possiamo scrivere una classe `OrderedList` andando a derivare dalla classe `List`
+#include <iostream>
+#include <list>
 
-deriviamo da List con il modificatore protected, perchè non vogliamo che siano accessibili tutti i metodi di List, anzi vogliamo cambiare il funzionamento di alcuni
+using std::cout;
+using std::endl;
+using std::list;
+using std::ostream;
 
-## [Implementazione](../../Implementazioni/OrderedList/OrderedList.h)
-
-## Esempio
-
-```cpp
 template <class T>
 class OrderedList : protected list<T> {
    public:
@@ -20,9 +20,7 @@ class OrderedList : protected list<T> {
     template <class U>
     friend ostream& operator<<(ostream& o, const OrderedList<U>& ol);
 };
-```
 
-```cpp
 template <class T>
 void OrderedList<T>::insert(const T& v) {
     if (empty()) {
@@ -42,6 +40,13 @@ void OrderedList<T>::insert(const T& v) {
     list<T>::push_back(v);
 }
 
+// template <class T>
+// void OrderedList<T>::print() const {
+//     for (auto it = list<T>::begin(); it != list<T>::end(); it++) {
+//         cout << *it << " ";
+//     }
+// }
+
 template <class U>
 ostream& operator<<(ostream& o, const OrderedList<U>& ol) {
     std::cout << "{ ";
@@ -51,4 +56,5 @@ ostream& operator<<(ostream& o, const OrderedList<U>& ol) {
     std::cout << "};\n";
     return o;
 }
-```
+
+#endif

@@ -87,6 +87,7 @@
 
 - [Vector](../Implementazioni/Vector/Vector.h)
 - [Insieme](../Implementazioni/Insieme/Insieme.h)
+- [Lista Ordinata](../Implementazioni/OrderedList/OrderedList.h)
 
 ## Alcuni siti utili
 
