@@ -35,22 +35,17 @@ bool GestorePrenotazioni::esistePrenotazione(int numero) {
 
 bool GestorePrenotazioni::aggiungiPrenotazione(int posti, string codice) {
     for (int i = 0; i < 10; ++i) {
-        if (codici[i] == codice) {
-            if (postiTotali[i] >= posti) {
-                int numeroPrenotazione = rand() % 10000;
-                while (esistePrenotazione(numeroPrenotazione))
-                    numeroPrenotazione = rand() % 10000;
+        if (codici[i] != codice) continue;
+        if (postiTotali[i] < posti) return false;
 
-                Prenotazione *p =
-                    new Prenotazione(numeroPrenotazione, posti, codice);
-                prenotazioni.push_back(p);
-                postiTotali[i] -= posti;
-                return true;
+        int numeroPrenotazione = rand() % 10000;
+        while (esistePrenotazione(numeroPrenotazione))
+            numeroPrenotazione = rand() % 10000;
 
-            } else {
-                return false;
-            }
-        }
+        Prenotazione *p = new Prenotazione(numeroPrenotazione, posti, codice);
+        prenotazioni.push_back(p);
+        postiTotali[i] -= posti;
+        return true;
     }
     return false;
 }
@@ -60,9 +55,13 @@ bool GestorePrenotazioni::rimuoviPrenotazione(int numero) {
         if ((**it).getNumero() == numero) {
             string codice = (**it).getCodice();
 
+            // codice del prof:
+
             // "c0005" --> '5' --> 4
-            int pos = codice[codice.length() - 1] - '1';
-            if (pos == -1) pos == 9;  // "g0010" --> '0' --> 9
+            // int pos = codice[codice.length() - 1] - '1';
+            // if (pos == -1) pos == 9;  // "g0010" --> '0' --> 9
+
+            int pos = stoi(codice.substr(1)) - 1;  // l'indice inizia da 0
 
             postiTotali[pos] += (**it).getPosti();
 

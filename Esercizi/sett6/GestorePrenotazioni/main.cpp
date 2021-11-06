@@ -16,7 +16,7 @@ int main() {
     if (g.aggiungiPrenotazione(2, "d0004"))
         cout << "Prenotazione andata a buon fine\n";
     else
-        cout << "c'è stato un errore durante l'aggiunta della prenotazione\n";
+        cout << "c'e' stato un errore durante l'aggiunta della prenotazione\n";
 
     g.stampaPrenotazioni();
     cout << endl;
@@ -27,7 +27,11 @@ int main() {
     cout << "Inserisci numero prenotazione da eliminare: ";
     int numero;
     cin >> numero;
-    g.rimuoviPrenotazione(numero);
+    if (g.rimuoviPrenotazione(numero))
+        cout << "Prenotazione numero: " << numero << " rimossa\n";
+    else
+        cout << "non e' stato possibile rimuovere la prenotazione numero: "
+             << numero << endl;
 
-    g.stampaPrenotazioni();
+        g.stampaPrenotazioni();
 }
