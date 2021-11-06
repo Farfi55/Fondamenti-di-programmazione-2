@@ -1,13 +1,15 @@
-/.idea
-/.vscode
+*.idea
+*.vscode
 /appunti cpp.zip
 /cmake-build-debug
 /CMakeLists.txt
 /misc
 /*.pdf
 /*.html
+
 *test*
+
+# per evitare di caricare anche gli .exe usati per testare il compilatore
+*.exe
 *tempCodeRunnerFile.*
 Implementazioni/main.cpp
-*.exe
-
