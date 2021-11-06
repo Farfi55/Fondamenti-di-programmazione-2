@@ -17,6 +17,7 @@ class GestorePrenotazioni {
     bool aggiungiPrenotazione(int posti, string codice);
     bool rimuoviPrenotazione(int numero);
     void stampaPrenotazioni(string codice) const;
+    void stampaPrenotazioni() const;
     void ordinaPrenotazioni();
 
     GestorePrenotazioni& operator=(const GestorePrenotazioni&);
