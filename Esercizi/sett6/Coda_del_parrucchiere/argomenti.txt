@@ -1,0 +1,9 @@
+1
+34 Alessio taglio 30 7
+1
+78 Ginevra taglio_e_tinta 60 35
+1
+52 Gennaro taglio_barba 15 5
+1
+40 Martina acconciatura 40 10
+ 
