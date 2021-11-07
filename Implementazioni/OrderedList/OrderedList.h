@@ -11,7 +11,7 @@ using std::ostream;
 
 template <class T>
 class OrderedList : protected list<T> {
-   public:
+public:
     void insert(const T& v);
     void remove(const T& v) { list<T>::remove(v); }
     bool find(const T& v) const { return list<T>::find(v); }

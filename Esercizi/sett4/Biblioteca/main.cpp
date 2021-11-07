@@ -15,7 +15,7 @@ void rimuoviCliente(Biblioteca* biblioteca);
 void effettuaPrestitoORiconsegna(Biblioteca* biblioteca, bool effettuaPrestito);
 
 
-void stampaSceltaFunzione(){
+void stampaSceltaFunzione() {
 	cout << "Scegli la funzione:\n"
 		<< " 0 - esci\n"
 		<< " 1 - Inserisci un libro\n"
@@ -38,9 +38,9 @@ int main() {
 	Biblioteca biblioteca = Biblioteca();
 
 	biblioteca.aggiungiLibro(Libro("1984", "George Orwell", "Asbro")); // 0
-	biblioteca.aggiungiLibro(Libro("Alice nel paese delle meraviglie", 
+	biblioteca.aggiungiLibro(Libro("Alice nel paese delle meraviglie",
 		"Robert Wild, Daniel Winston", "Mondadori")); // 1
-	biblioteca.aggiungiLibro(Libro("c++ Primer 5th edition", 
+	biblioteca.aggiungiLibro(Libro("c++ Primer 5th edition",
 		"Stanley B. Lippman, Josée Lajoie, Barbara E. Moo", "Addison-Wesley")); // 2
 	biblioteca.aggiungiLibro(Libro("La Divina Commedia", "Dante Alighieri", "il Monaco emanuense (c)")); // 3
 	biblioteca.aggiungiLibro(Libro("I 3 porcellini", "M. Duca, P. Tudda, F. Gallo", "Mondadori")); // 4
@@ -49,13 +49,13 @@ int main() {
 	biblioteca.aggiungiLibro(Libro("La bella e la bestia", "ND", "ND")); // 7
 
 
-	biblioteca.aggiungiCliente(Cliente("Raimondo", 	"Rossi", 		"RSIRAI")); // 0
-	biblioteca.aggiungiCliente(Cliente("Zaniela",	"Verdi", 		"VRDNEL")); // 1
-	biblioteca.aggiungiCliente(Cliente("John", 		"Blues", 		"BLUJON")); // 2
-	biblioteca.aggiungiCliente(Cliente("Timmy", 	"Tisca'", 		"TSCTMM")); // 3
-	biblioteca.aggiungiCliente(Cliente("Letizia", 	"Tusca", 		"TSCLTZ")); // 4
-	biblioteca.aggiungiCliente(Cliente("Tiziana", 	"Topolino", 	"TOPTIZ")); // 5
-	biblioteca.aggiungiCliente(Cliente("Tizio", 	"Tizii", 		"TZITZO")); // 6
+	biblioteca.aggiungiCliente(Cliente("Raimondo", "Rossi", "RSIRAI")); // 0
+	biblioteca.aggiungiCliente(Cliente("Zaniela", "Verdi", "VRDNEL")); // 1
+	biblioteca.aggiungiCliente(Cliente("John", "Blues", "BLUJON")); // 2
+	biblioteca.aggiungiCliente(Cliente("Timmy", "Tisca'", "TSCTMM")); // 3
+	biblioteca.aggiungiCliente(Cliente("Letizia", "Tusca", "TSCLTZ")); // 4
+	biblioteca.aggiungiCliente(Cliente("Tiziana", "Topolino", "TOPTIZ")); // 5
+	biblioteca.aggiungiCliente(Cliente("Tizio", "Tizii", "TZITZO")); // 6
 
 	biblioteca.prestito(&biblioteca.libroA(6), &biblioteca.clienteA(3));
 	biblioteca.prestito(&biblioteca.libroA(2), &biblioteca.clienteA(1));
@@ -67,8 +67,8 @@ int main() {
 
 
 	bool quitting = false;
-	while(!quitting){
-		stampaSceltaFunzione();	
+	while(!quitting) {
+		stampaSceltaFunzione();
 
 		int funzione;
 		cin >> funzione;
@@ -87,17 +87,17 @@ int main() {
 			inserisciCliente(&biblioteca);
 
 		else if(funzione == 4) //RIMUOVI CLIENTE
-			rimuoviCliente(&biblioteca);		
-		
+			rimuoviCliente(&biblioteca);
+
 		else if(funzione == 5) // FUNZIONE PRESTITO
-			effettuaPrestitoORiconsegna(&biblioteca, true);			
-		
+			effettuaPrestitoORiconsegna(&biblioteca, true);
+
 		else if(funzione == 6) // FUNZIONE RICONSEGNA
 			effettuaPrestitoORiconsegna(&biblioteca, false);
 
 		else if(funzione == 7) // STAMPA TUTTI I LIBRI
 			biblioteca.stampaLibri();
-			
+
 		else if(funzione == 8) // STAMPA TUTTI I CLIENTI
 			biblioteca.stampaClienti();
 
@@ -109,67 +109,67 @@ int main() {
 
 		else
 			cout << "Codice funzione non riconosciuto\n";
-		
-		
+
+
 
 	}
 }
 
-	
-		// int IDcliente, IDlibro;
-		// cin >> IDcliente >> IDlibro;
 
-		// if(IDcliente == -1) {
-		// 	quitting = true; 
-		// 	break; 
-		// }
+// int IDcliente, IDlibro;
+// cin >> IDcliente >> IDlibro;
 
-		// Cliente* cliente = biblioteca.cercaCliente(IDcliente);
-		// if(cliente == nullptr) {
-		// 	cout << "NON E' STATO POSSIBILE TROVARE IL CLIENTE!\n";
-		// 	continue;
-		// }
-
-
-		// Libro* libro = biblioteca.cercaLibro(IDlibro);
-		// if(libro == nullptr) {
-		// 	cout << "NON E' STATO POSSIBILE TROVARE IL LIBRO!\n";
-		// 	continue;
-		// }
-
-		// if(biblioteca.prestito(libro, cliente))
-		// 	cout << "prestito andato a buon fine\n";
-		// else 
-		// 	cout << "non è stato possibile concludere il prestito\n";
-
-
-		// // biblioteca.stampaLibriInPrestito();
-		// biblioteca.stampaClientiCheDevonoRestituireLibro();
-
-	// }
-
-	
-	// cout << cliente->getNome() << " " << cliente->getCognome() << endl;
-
-	// cout << endl << endl;
-	// biblioteca.stampaLibriInPrestito();
-	// cout << endl << endl;
-	// biblioteca.rimuoviLibro(0);
-
-
-	// biblioteca.stampaLibriInPrestito();
+// if(IDcliente == -1) {
+// 	quitting = true; 
+// 	break; 
 // }
 
-void inserisciLibro(Biblioteca* biblioteca){
+// Cliente* cliente = biblioteca.cercaCliente(IDcliente);
+// if(cliente == nullptr) {
+// 	cout << "NON E' STATO POSSIBILE TROVARE IL CLIENTE!\n";
+// 	continue;
+// }
+
+
+// Libro* libro = biblioteca.cercaLibro(IDlibro);
+// if(libro == nullptr) {
+// 	cout << "NON E' STATO POSSIBILE TROVARE IL LIBRO!\n";
+// 	continue;
+// }
+
+// if(biblioteca.prestito(libro, cliente))
+// 	cout << "prestito andato a buon fine\n";
+// else 
+// 	cout << "non è stato possibile concludere il prestito\n";
+
+
+// // biblioteca.stampaLibriInPrestito();
+// biblioteca.stampaClientiCheDevonoRestituireLibro();
+
+// }
+
+
+// cout << cliente->getNome() << " " << cliente->getCognome() << endl;
+
+// cout << endl << endl;
+// biblioteca.stampaLibriInPrestito();
+// cout << endl << endl;
+// biblioteca.rimuoviLibro(0);
+
+
+// biblioteca.stampaLibriInPrestito();
+// }
+
+void inserisciLibro(Biblioteca* biblioteca) {
 	string nome, autori, casaEditrice;
 	cout << "Inserisci dati libro:\n";
-	cout << "nome: "; cin >> nome;				
-	cout << "autori (separati con ', '): "; cin >> autori;				
+	cout << "nome: "; cin >> nome;
+	cout << "autori (separati con ', '): "; cin >> autori;
 	cout << "casa editrice: "; cin >> casaEditrice;
 	biblioteca->aggiungiLibro(Libro(nome, autori, casaEditrice));
 }
 
-void rimuoviLibro(Biblioteca* biblioteca){
+void rimuoviLibro(Biblioteca* biblioteca) {
 	cout << "Elimina per (0: indice, 1: ID, 2: Nome): ";
 	int eliminaPer; cin >> eliminaPer;
 
@@ -177,13 +177,13 @@ void rimuoviLibro(Biblioteca* biblioteca){
 		int index; cin >> index;
 		biblioteca->rimuoviLibro(index);
 	}
-	else if(eliminaPer == 1){ // ID
+	else if(eliminaPer == 1) { // ID
 		int ID; cin >> ID;
 		int index = biblioteca->indiceDiLibro(ID);
 		if(index != -1) biblioteca->rimuoviLibro(index);
 		else cout << "Non e' stato possibile trovare il libro\n";
 	}
-	else if(eliminaPer == 2){ // nome
+	else if(eliminaPer == 2) { // nome
 		string nome; cin >> nome;
 		int index = biblioteca->indiceDiLibro(nome);
 		if(index != -1) biblioteca->rimuoviLibro(index);
@@ -192,29 +192,29 @@ void rimuoviLibro(Biblioteca* biblioteca){
 	else cout << "Tipo di operazione non riconosciuta\n";
 }
 
-void inserisciCliente(Biblioteca* biblioteca){
+void inserisciCliente(Biblioteca* biblioteca) {
 	string nome, cognome, codiceFiscale;
 	cout << "Inserisci dati Cliente:\n";
-	cout << "nome: "; cin >> nome;				
-	cout << "cognome: "; cin >> cognome;				
+	cout << "nome: "; cin >> nome;
+	cout << "cognome: "; cin >> cognome;
 	cout << "codice fiscale: "; cin >> codiceFiscale;
-	biblioteca->aggiungiCliente(Cliente(nome, cognome, codiceFiscale));	
+	biblioteca->aggiungiCliente(Cliente(nome, cognome, codiceFiscale));
 }
 
-void rimuoviCliente(Biblioteca* biblioteca){
+void rimuoviCliente(Biblioteca* biblioteca) {
 	cout << "Elimina per (0: indice, 1: ID, 2: Codice Fiscale): ";
 	int eliminaPer; cin >> eliminaPer;
 	if(eliminaPer == 0) { // indice
 		int index; cin >> index;
 		biblioteca->rimuoviCliente(index);
 	}
-	else if(eliminaPer == 1){ // ID
+	else if(eliminaPer == 1) { // ID
 		int ID; cin >> ID;
 		int index = biblioteca->indiceDiCliente(ID);
 		if(index != -1) biblioteca->rimuoviCliente(index);
 		else cout << "Non e' stato possibile trovare il cliente\n";
 	}
-	else if(eliminaPer == 2){ // Codice Fiscale
+	else if(eliminaPer == 2) { // Codice Fiscale
 		string codiceFiscale; cin >> codiceFiscale;
 		int index = biblioteca->indiceDiCliente(codiceFiscale);
 		if(index != -1) biblioteca->rimuoviCliente(index);
@@ -224,24 +224,24 @@ void rimuoviCliente(Biblioteca* biblioteca){
 }
 
 
-void effettuaPrestitoORiconsegna(Biblioteca* biblioteca, bool effettuaPrestito){
+void effettuaPrestitoORiconsegna(Biblioteca* biblioteca, bool effettuaPrestito) {
 	cout << "Seleziona per (0: (ID, ID), 1: (Nome, Codice Fiscale)): ";
 	int selezionaPer; cin >> selezionaPer;
 
 	if(selezionaPer != 0 && selezionaPer != 1)
 		return;
-	
+
 	Cliente* cliente;
 	Libro* libro;
-	if(selezionaPer == 0){ // per ID
+	if(selezionaPer == 0) { // per ID
 		int IDlibro, IDcliente;
 		cout << "Inserisci ID libro, poi ID cliente: ";
-		cin >> IDlibro >> IDcliente ;
+		cin >> IDlibro >> IDcliente;
 
 		libro = biblioteca->cercaLibro(IDlibro);
 		cliente = biblioteca->cercaCliente(IDcliente);
 	}
-	else{
+	else {
 		string nomeLibro, codiceFiscaleCliente;
 		cout << "Inserisci nome libro, poi codice fiscale cliente: ";
 		cin >> nomeLibro >> codiceFiscaleCliente;
@@ -258,21 +258,21 @@ void effettuaPrestitoORiconsegna(Biblioteca* biblioteca, bool effettuaPrestito){
 		cout << "NON E' STATO POSSIBILE TROVARE IL LIBRO!\n";
 		return;
 	}
-	else{
-		if(effettuaPrestito){ // Funzione prestito
+	else {
+		if(effettuaPrestito) { // Funzione prestito
 			if(biblioteca->prestito(libro, cliente))
 				cout << "prestito andato a buon fine\n";
-			else 
+			else
 				cout << "non è stato possibile concludere il prestito\n";
 		}
-		else{ // Funzione riconsegna
+		else { // Funzione riconsegna
 			if(biblioteca->riconsegna(libro, cliente))
 				cout << "riconsegna andata a buon fine\n";
-			else 
+			else
 				cout << "non è stato possibile concludere la riconsegna\n";
 		}
 	}
-	
+
 
 
 }

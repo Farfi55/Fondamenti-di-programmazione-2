@@ -65,17 +65,19 @@ void eliminaSomma(list<int>&, int x) {
 ```
 
 ## Sito da usare per references:
-Cplusplus: https://www.cplusplus.com/reference/
+
+Cplusplus: <https://www.cplusplus.com/reference/>
 
 ## Stack e code
-### Stack: 
+
+### Stack:
 
 - Tecnica LiFo: last in, first out
   - Push: viene inserito alla fine
   - Pop: l'ultimo viene rimosso
   - Top: visualizza l'elemento alla fine
 
-### Code: 
+### Code:
 
 - Tecnica FiFo: first in, first out
   - Push: viene inserito all'inizio
