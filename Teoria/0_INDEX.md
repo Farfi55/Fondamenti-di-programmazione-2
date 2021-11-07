@@ -81,13 +81,21 @@
   - [Ordered list *(liste ordinate)*](sett6/21_4_OrderedList.md)
   - Esercizi liste: [1](sett6/22_1_liste_stack_code.md#Esercizio-1), [2](sett6/22_1_liste_stack_code.md#Esercizio-2)
 - [Iterator](sett6/21_5_Iterator.md)
-- [Stack e code](sett6/22_1_liste_stack_code.md#Stack-e-code) 
+- [Stack & queue *(code)*](sett6/22_1_liste_stack_code.md#Stack-e-code)
+
+## Teoria extra
+
+- [Uniform Initialization *(Inizializzazione uniforme)*](extra/Uniform_Initialization.md)
+
+___
 
 ## Implementazioni
 
 - [Vector](../Implementazioni/Vector/Vector.h)
 - [Insieme](../Implementazioni/Insieme/Insieme.h)
 - [Lista Ordinata](../Implementazioni/OrderedList/OrderedList.h)
+
+___
 
 ## Alcuni siti utili
 
