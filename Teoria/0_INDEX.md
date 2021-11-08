@@ -75,13 +75,7 @@
 
 ## Settimana 6
 
-- [Contenitori](sett6/21_1_Contenitori.md)
-  - [Forward list *(lista)*](sett6/21_2_forward_list.md)
-  - [Doubly-linked list *(liste bidirezionali)*](sett6/21_3_Doubly_linked_list.md)
-  - [Ordered list *(liste ordinate)*](sett6/21_4_OrderedList.md)
-  - Esercizi liste: [1](sett6/22_1_liste_stack_code.md#Esercizio-1), [2](sett6/22_1_liste_stack_code.md#Esercizio-2)
-- [Iterator](sett6/21_5_Iterator.md)
-- [Stack & queue *(code)*](sett6/22_1_liste_stack_code.md#Stack-e-code)
+- [Poliformismo](sett7/24_1_Poliformismo.md)
 
 ## Teoria extra
 
