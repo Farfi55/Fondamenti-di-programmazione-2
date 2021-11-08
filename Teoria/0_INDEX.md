@@ -77,10 +77,11 @@
 
 - [Poliformismo](sett7/24_1_Poliformismo.md)
 - [extra stack](sett7/24_2_Stack_extra.md)
-
+  
 ## Teoria extra
 
 - [Uniform Initialization *(Inizializzazione uniforme)*](extra/Uniform_Initialization.md)
+- [Lettura e scrittura su file](extra/DatiSuFile.cpp)
 
 ___
 
