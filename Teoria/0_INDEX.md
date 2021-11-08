@@ -76,6 +76,7 @@
 ## Settimana 6
 
 - [Poliformismo](sett7/24_1_Poliformismo.md)
+- [extra stack](sett7/24_2_Stack_extra.md)
 
 ## Teoria extra
 
