@@ -75,9 +75,21 @@
 
 ## Settimana 6
 
+<!-- non so perchè si sono cancellati -->
+
+- [Contenitori](sett6/21_1_Contenitori.md)
+  - [Forward list *(lista)*](sett6/21_2_forward_list.md)
+  - [Doubly-linked list *(liste bidirezionali)*](sett6/21_3_Doubly_linked_list.md)
+  - [Ordered list *(liste ordinate)*](sett6/21_4_OrderedList.md)
+  - Esercizi liste: [1](sett6/22_1_liste_stack_code.md#Esercizio-1), [2](sett6/22_1_liste_stack_code.md#Esercizio-2)
+- [Iterator](sett6/21_5_Iterator.md)
+- [Stack & queue *(code)*](sett6/22_1_liste_stack_code.md#Stack-e-code)
+  
+## Settimana 7
+
 - [Poliformismo](sett7/24_1_Poliformismo.md)
 - [extra stack](sett7/24_2_Stack_extra.md)
-  
+    
 ## Teoria extra
 
 - [Uniform Initialization *(Inizializzazione uniforme)*](extra/Uniform_Initialization.md)
@@ -90,6 +102,9 @@ ___
 - [Vector](../Implementazioni/Vector/Vector.h)
 - [Insieme](../Implementazioni/Insieme/Insieme.h)
 - [Lista Ordinata](../Implementazioni/OrderedList/OrderedList.h)
+- Matrice
+  - [Matrice](../Implementazioni/Matrix/Matrix.cpp)
+  - [Matrice Simmetrica](../Implementazioni/Matrix/SymmetricMatrix.cpp)
 
 ___
 
