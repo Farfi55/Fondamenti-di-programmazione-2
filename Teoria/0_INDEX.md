@@ -89,7 +89,7 @@
 
 - [Poliformismo](sett7/24_1_Poliformismo.md)
 - [extra stack](sett7/24_2_Stack_extra.md)
-    
+  
 ## Teoria extra
 
 - [Uniform Initialization *(Inizializzazione uniforme)*](extra/Uniform_Initialization.md)
@@ -102,9 +102,9 @@ ___
 - [Vector](../Implementazioni/Vector/Vector.h)
 - [Insieme](../Implementazioni/Insieme/Insieme.h)
 - [Lista Ordinata](../Implementazioni/OrderedList/OrderedList.h)
-- Matrice
-  - [Matrice](../Implementazioni/Matrix/Matrix.cpp)
-  - [Matrice Simmetrica](../Implementazioni/Matrix/SymmetricMatrix.cpp)
+- Matrici
+  - Matrice: [1](../Implementazioni/Matrix/Matrix.cpp), [2](sett7/25_1_hanoi_matrix.md#classe-matrice-e-matrice-simmetrica)
+  - Matrice simmetrica: [1](../Implementazioni/Matrix/SymmetricMatrix.cpp), [2](sett7/25_1_hanoi_matrix.md#classe-matrice-e-matrice-simmetrica)
 
 ___
 
