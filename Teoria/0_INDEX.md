@@ -89,11 +89,10 @@
 
 - [Poliformismo](sett7/24_1_Poliformismo.md)
 - [extra stack](sett7/24_2_Stack_extra.md)
-<<<<<<< HEAD
-  
+
 ## Settimana 8
 
-- Trees *(Alberi)*[1](sett8/26_1_Alberi.md) 
+- Trees *(Alberi)* [1](sett8/26_1_Alberi.md),
   [2](sett8/25_1_alberi.md)
 - [Enum](27_2_enum.md)
 
@@ -112,6 +111,9 @@ ___
 - Matrici
   - Matrice: [1](../Implementazioni/Matrix/Matrix.cpp), [2](sett7/25_1_hanoi_matrix.md#classe-matrice-e-matrice-simmetrica)
   - Matrice simmetrica: [1](../Implementazioni/Matrix/SymmetricMatrix.cpp), [2](sett7/25_1_hanoi_matrix.md#classe-matrice-e-matrice-simmetrica)
+- [Albero Binario](../Implementazioni/AlberoB/AlberoB.h)
+  - [esempi](../Implementazioni/AlberoB/esempi.cpp)
+  - [esercitazione](../Implementazioni/AlberoB/main.cpp)
 
 ___
 
