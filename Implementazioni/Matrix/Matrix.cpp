@@ -1,4 +1,8 @@
+#ifdef MATRIX_H
+#define MATRIX_H
+
 #include <vector>
+#include <cassert>
 #include <iostream>
 
 using namespace std;
@@ -67,3 +71,5 @@ public:
         cout << endl;
     }
 };
+
+#endif 
