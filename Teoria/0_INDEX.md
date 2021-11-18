@@ -89,10 +89,12 @@
 
 - [Poliformismo](sett7/24_1_Poliformismo.md)
 - [extra stack](sett7/24_2_Stack_extra.md)
+<<<<<<< HEAD
   
 ## Settimana 8
 
-- [Trees *(Alberi)*](sett8/26_1_Alberi.md)
+- Trees *(Alberi)*[1](sett8/26_1_Alberi.md) 
+  [2](sett8/25_1_alberi.md)
 - [Enum](27_2_enum.md)
 
 ## Teoria extra
