@@ -89,7 +89,11 @@
 
 - [Poliformismo](sett7/24_1_Poliformismo.md)
 - [extra stack](sett7/24_2_Stack_extra.md)
-  
+
+## Settimana 8
+
+- [Alberi](sett8/25_1_alberi.md)
+
 ## Teoria extra
 
 - [Uniform Initialization *(Inizializzazione uniforme)*](extra/Uniform_Initialization.md)
