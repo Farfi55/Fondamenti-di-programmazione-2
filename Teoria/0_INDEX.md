@@ -37,7 +37,7 @@
 
 ## Settimana 4
 
-- [Classi 1](sett4/13_1_Classi1.md)
+- [Classi (parte 1)](sett4/13_1_Classi1.md)
   - [Le Classi](sett4/13_1_Classi1.md/#le-classi)
     - [Alcuni termini](sett4/13_1_Classi1.md/#alcuni-termini)
     - [Come definire una classe](sett4/13_1_Classi1.md/#come-definire-una-classe)
@@ -47,7 +47,7 @@
     - [Costruttore](sett4/13_1_Classi1.md/#costruttore)
     - [Vari modi per inizializzare una classe](sett4/13_1_Classi1.md/#vari-modi-per-inizializzare-una-classe)
     - [Classi all'interno di classi](#classi-allinterno-di-classi)
-- [Classi 2](sett4/14_1_Classi2.md)
+- [Classi (parte 2)](sett4/14_1_Classi2.md)
   - [Puntatotri a classi](sett4/14_1_Classi2.md/#puntatori-a-classi)
   - [Overloading degli operatori](sett4/14_1_Classi2.md/#overloading-degli-operatori)
     - [Operatori unari](sett4/14_1_Classi2.md/#operatori-unari)
@@ -70,8 +70,8 @@
   - [std::string](sett5/18_1_STL.md/#string)
 - [Friend](sett5/18_2_Friend.md)
   - [conflitti circolari](sett5/18_2_Friend.md/#risolvere-conflitti-dipendenza-circolare)
-- [Ereditarietà(1)](sett5/18_3_Ereditarieta1.md)
-- [Ereditarietà(2)](sett5/19_1_Ereditarieta2.md)
+- [Ereditarietà (parte 1)](sett5/18_3_Ereditarieta1.md)
+- [Ereditarietà (parte 2)](sett5/19_1_Ereditarieta2.md)
 
 ## Settimana 6
 
@@ -81,7 +81,7 @@
   - [Forward list *(lista)*](sett6/21_2_forward_list.md)
   - [Doubly-linked list *(liste bidirezionali)*](sett6/21_3_Doubly_linked_list.md)
   - [Ordered list *(liste ordinate)*](sett6/21_4_OrderedList.md)
-  - Esercizi liste: [1](sett6/22_1_liste_stack_code.md#Esercizio-1), [2](sett6/22_1_liste_stack_code.md#Esercizio-2)
+  - Esercizi liste: [[1]](sett6/22_1_liste_stack_code.md#Esercizio-1), [[2]](sett6/22_1_liste_stack_code.md#Esercizio-2)
 - [Iterator](sett6/21_5_Iterator.md)
 - [Stack & queue *(code)*](sett6/22_1_liste_stack_code.md#Stack-e-code)
   
@@ -89,11 +89,11 @@
 
 - [Poliformismo](sett7/24_1_Poliformismo.md)
 - [extra stack](sett7/24_2_Stack_extra.md)
+- [Torre di Hanoi *(usando lo stack)*](../Esercizi/sett7/TowerOfHanoi.cpp)
 
 ## Settimana 8
 
-- Trees *(Alberi)* [1](sett8/26_1_Alberi.md),
-  [2](sett8/25_1_alberi.md)
+- Trees *(Alberi)* [[1]](sett8/26_1_Alberi.md), [[2]](sett8/25_1_alberi.md)
 - [Enum](27_2_enum.md)
 
 ## Teoria extra
@@ -109,8 +109,8 @@ ___
 - [Insieme](../Implementazioni/Insieme/Insieme.h)
 - [Lista Ordinata](../Implementazioni/OrderedList/OrderedList.h)
 - Matrici
-  - Matrice: [1](../Implementazioni/Matrix/Matrix.cpp), [2](sett7/25_1_hanoi_matrix.md#classe-matrice-e-matrice-simmetrica)
-  - Matrice simmetrica: [1](../Implementazioni/Matrix/SymmetricMatrix.cpp), [2](sett7/25_1_hanoi_matrix.md#classe-matrice-e-matrice-simmetrica)
+  - Matrice: [[1]](../Implementazioni/Matrix/Matrix.cpp), [[2]](sett7/25_1_hanoi_matrix.md#classe-matrice-e-matrice-simmetrica)
+  - Matrice simmetrica: [[1]](../Implementazioni/Matrix/SymmetricMatrix.cpp), [[2]](sett7/25_1_hanoi_matrix.md#classe-matrice-e-matrice-simmetrica)
 - [Albero Binario](../Implementazioni/AlberoB/AlberoB.h)
   - [esempi](../Implementazioni/AlberoB/esempi.cpp)
   - [esercitazione](../Implementazioni/AlberoB/main.cpp)

@@ -100,7 +100,6 @@ Accesso al Padre in *O(1)*
 
 dato K prof. max prevedi spazio der un albero **PIENO** di prof. K
 
-
 ## collegate
 
 ## puntatori ai figli
@@ -119,14 +118,17 @@ B---+  C--+
 D-+ 0  0  E-+
 | |       | |
 0 0       0 0
+
+0 = null
 ```
 
+[una possibile implementazione per alberi binari](../../Implementazioni/AlberoB/AlberoB.h)
+
+permette di essere convertito in altri tipi di strutture, per velocizzare alcune funzioni come la ricerca
 
 ## liste di puntatori ai figli
 
-permette di gestire Alberi generici
-
-
+permette di gestire Alberi generici non avendo limitazioni su quanti figli un nodo può avere
 
 ## Primo figlio-fratello
 
