@@ -26,26 +26,14 @@ AlberoB<int> vecToAlbero(vector<int> vettore);
 void printPerLivelli(const AlberoB<int>& a);
 
 
-// PER CASA
+bool fogliePosEqFoglieNeg(const AlberoB<int>& a);
 
-// restituisce true solo se il numero di foglie con val < 0 
-// è uguale al numero di foglie con val >= 0
+int posNegDifference(const AlberoB<int>& a);
 
-bool fogliePosEqFoglieNeg(const AlberoB<int> a);
 
-// restituisce true se la somma di ogni coppia di livelli adiacenti non superano il max
 bool sommaLivelliAdiacenti(const AlberoB<int> a, int max);
 
-
-/*
-  Supponiamo che ogni percorso dalla radice alla foglia costituisca una parola
-ret true:
-    se ogni parola ha un numero di vocali e consonanti che differiscono al più di uno.
-si supponga che la parola contenga solo lettere che siano minuscole
-
- */
 bool vocaliEConsonanti(const AlberoB<char>& a);
-
 
 
 int main(int argc, char const* argv[])
@@ -68,7 +56,7 @@ int main(int argc, char const* argv[])
     // c.insFiglio(SIN, f);
     // c.insFiglio(DES, g);
 
-    // AlberoB<int> h(3);
+    // AlberoB<int> h(3);    
     // d.insFiglio(SIN, h);
 
     AlberoB<int> a(2);
@@ -88,30 +76,49 @@ int main(int argc, char const* argv[])
 
     printPerLivelli(a);
 
-
-
     if(ogniPercorsoRadiceFoglia(a, 15, 0)) {
-        std::cout << "nessun percorso supera il massimo" << std::endl;
+        cout << "nessun percorso supera il massimo" << endl;
     }
 
     if(pariEDispari(a))
-        std::cout << "Pari e dispari" << std::endl;
-
+        cout << "Pari e dispari" << endl;
 
     cout << sommaPath(a) << endl;
+    cout << endl << endl;
+
+
 
     vector<int> vec = { 17,12,22,1,3,5,7 };
-
-
     AlberoB<int> a2 = vecToAlbero(vec);
     printPerLivelli(a2);
-
     if(ogniPercorsoRadiceFoglia(a, 50, 0)) {
-        std::cout << "nessun percorso supera il massimo" << std::endl;
+        cout << "nessun percorso supera il massimo" << endl;
     }
-
     if(pariEDispari(a2))
-        std::cout << "Pari e dispari" << std::endl;
+        cout << "Pari e dispari" << endl;
+
+    cout << endl << endl;
+
+
+
+    // 3 nodi positivi, 3 nodi negativi
+    vector<int> vec3 = { 17,-12,-22,1,-3, 5 };
+    AlberoB<int> a3 = vecToAlbero(vec3);
+
+    if(fogliePosEqFoglieNeg(a3))cout << "numero uguale di foglie positive e negative\n";
+    else cout << "numero diverso di foglie positive e negative\n";
+
+    // aggiungendo un nodo negativo, il numero di nodi
+    // positivi e negativi non sara' piu' lo stesso
+    auto figlioFoglia = AlberoB<int>(-1);
+    a3.figlio(DES).insFiglio(DES, figlioFoglia);
+
+    if(fogliePosEqFoglieNeg(a3))
+        cout << "numero uguale di foglie positive e negative\n";
+    else cout << "numero diverso di foglie positive e negative\n";
+    cout << endl << endl;
+
+
 
 
     return 0;
@@ -294,7 +301,7 @@ void printPerLivelli(const AlberoB<int>& a) {
             livelloPrec++;
         }
 
-        std::cout << temp.radice() << ' ';
+        cout << temp.radice() << ' ';
 
         if(!temp.figlio(SIN).nullo()) {
             qAlberi.push(temp.figlio(SIN));
@@ -308,5 +315,37 @@ void printPerLivelli(const AlberoB<int>& a) {
 
     cout << endl;
 }
+
+
+
+// restituisce true solo se il numero di foglie con val < 0 
+// è uguale al numero di foglie con val >= 0
+
+bool fogliePosEqFoglieNeg(const AlberoB<int>& a) {
+    int difference = 0;
+    return (posNegDifference(a) == 0);
+}
+
+// helper function
+int posNegDifference(const AlberoB<int>& a) {
+    if(a.nullo()) return 0;
+    else
+        return ((a.radice() >= 0) ? 1 : -1)
+        + posNegDifference(a.figlio(SIN))
+        + posNegDifference(a.figlio(DES));
+}
+
+// restituisce true se la somma di ogni coppia di livelli adiacenti non superano il max
+// bool sommaLivelliAdiacenti(const AlberoB<int> a, int max)
+
+
+/*
+  Supponiamo che ogni percorso dalla radice alla foglia costituisca una parola
+ret true:
+    se ogni parola ha un numero di vocali e consonanti che differiscono al più di uno.
+si supponga che la parola contenga solo lettere che siano minuscole
+
+*/
+// bool vocaliEConsonanti(const AlberoB<char>& a);
 
 
