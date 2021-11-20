@@ -21,16 +21,20 @@ int sommaPath(const AlberoB<int>& a);
 
 int sommaPath(const AlberoB<int>& a, int sommaCorrente);
 
+AlberoB<int> vecToAlbero(vector<int> vettore);
+
+void printPerLivelli(const AlberoB<int>& a);
+
 
 // PER CASA
 
 // restituisce true solo se il numero di foglie con val < 0 
 // è uguale al numero di foglie con val >= 0
 
-bool fogliePosEqFoglieNeg(const alberoB<int> a);
+bool fogliePosEqFoglieNeg(const AlberoB<int> a);
 
 // restituisce true se la somma di ogni coppia di livelli adiacenti non superano il max
-bool sommaLivelliAdiacenti(const alberoB<int> a, int max);
+bool sommaLivelliAdiacenti(const AlberoB<int> a, int max);
 
 
 /*
@@ -40,7 +44,7 @@ ret true:
 si supponga che la parola contenga solo lettere che siano minuscole
 
  */
-bool vocaliEConsonanti(const alberoB<char>& a);
+bool vocaliEConsonanti(const AlberoB<char>& a);
 
 
 
@@ -82,6 +86,7 @@ int main(int argc, char const* argv[])
     AlberoB<int> f(3);
     c.insFiglio(SIN, f);
 
+    printPerLivelli(a);
 
 
 
@@ -94,6 +99,20 @@ int main(int argc, char const* argv[])
 
 
     cout << sommaPath(a) << endl;
+
+    vector<int> vec = { 17,12,22,1,3,5,7 };
+
+
+    AlberoB<int> a2 = vecToAlbero(vec);
+    printPerLivelli(a2);
+
+    if(ogniPercorsoRadiceFoglia(a, 50, 0)) {
+        std::cout << "nessun percorso supera il massimo" << std::endl;
+    }
+
+    if(pariEDispari(a2))
+        std::cout << "Pari e dispari" << std::endl;
+
 
     return 0;
 }
@@ -237,31 +256,57 @@ AlberoB<int> vecToAlbero(vector<int> vettore) {
     vector<AlberoB<int>> alberi;
     alberi.push_back(albero);
 
-    for(int i = 1; i < alberi.size(); i++) {
-        albero<int> newAlbero(vettore[i]);
+    for(int i = 1; i < vettore.size(); i++) {
+        AlberoB<int> newAlbero(vettore[i]);
         alberi.push_back(newAlbero);
 
-        Direzione dir = (i + 1) % 2;
+        Direzione dir = Direzione((i + 1) % 2);
         alberi[(i - 1) / 2].insFiglio(dir, newAlbero);
     }
 
     return albero;
-
 }
 
 
-/*
 
+void printPerLivelli(const AlberoB<int>& a) {
+    if(a.nullo())
+        return;
 
+    queue<AlberoBInt> qAlberi;
+    queue<int> qLivelli;
 
-    0 -> 1  ((padre+1) * 2 )-1
-    0 -> 2  ((padre+1) * 2 )
+    qAlberi.push(a);
+    qLivelli.push(1);
 
-    1->3    ((padre+1) * 2 )-1
-    1->4    ((padre+1) * 2 )
+    int livelloPrec = 1;
 
-    2->5
-    2->6
-*/
+    while(!qAlberi.empty()) {
+        AlberoBInt temp = qAlberi.front();
+        qAlberi.pop();
+
+        // elaborare l'albero temp
+        int livelloTmp = qLivelli.front();
+        qLivelli.pop();
+
+        if(livelloTmp > livelloPrec) {
+            cout << endl;
+            livelloPrec++;
+        }
+
+        std::cout << temp.radice() << ' ';
+
+        if(!temp.figlio(SIN).nullo()) {
+            qAlberi.push(temp.figlio(SIN));
+            qLivelli.push(livelloTmp + 1);
+        }
+        if(!temp.figlio(DES).nullo()) {
+            qAlberi.push(temp.figlio(DES));
+            qLivelli.push(livelloTmp + 1);
+        }
+    }
+
+    cout << endl;
+}
 
 
