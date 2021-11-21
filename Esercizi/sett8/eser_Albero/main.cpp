@@ -35,6 +35,8 @@ bool sommaLivelliAdiacenti(const AlberoB<int> a, int max);
 
 bool vocaliEConsonanti(const AlberoB<char>& a);
 
+bool vocaliEConsonanti(const AlberoB<char>& a, int diff);
+
 
 int main(int argc, char const* argv[])
 {
@@ -116,7 +118,7 @@ int main(int argc, char const* argv[])
     if(fogliePosEqFoglieNeg(a3))
         cout << "numero uguale di foglie positive e negative\n";
     else cout << "numero diverso di foglie positive e negative\n";
-    cout << endl << endl;
+    cout << endl;
 
     cout << "sommaLivelliAdiacenti(a3, max: -10): ";
     cout << (sommaLivelliAdiacenti(a3, -10) ? "true\n" : "false\n");
@@ -124,7 +126,29 @@ int main(int argc, char const* argv[])
     // lvl(1:2): -17  = 17 - 12 - 22
     // lvl(2:3): -32  = -12 - 22 + 1 - 3 + 5 - 1
 
+    cout << endl << endl;
 
+
+    AlberoB<char> alberoParole('a');
+    AlberoB<char> aps('x');   // ax
+    AlberoB<char> apd('e');   // ae
+    alberoParole.insFiglio(SIN, aps);
+    alberoParole.insFiglio(DES, apd);
+
+    AlberoB<char> apss('t');  // axt
+    AlberoB<char> apsd('p');  // axp
+    aps.insFiglio(SIN, apss);
+    aps.insFiglio(DES, apsd);
+
+    AlberoB<char> apds('f');  // aef
+    AlberoB<char> apdd('g');  // aeg
+    // AlberoB<char> apdd('u');  // aeu
+    apd.insFiglio(SIN, apds);
+    apd.insFiglio(DES, apdd);
+
+
+    cout << "vocaliEConsonanti: ";
+    cout << (vocaliEConsonanti(alberoParole) ? "true\n" : "false\n");
 
 
     return 0;
@@ -396,13 +420,32 @@ bool sommaLivelliAdiacenti(const AlberoB<int> a, int max) {
 
 
 
-    /*
-      Supponiamo che ogni percorso dalla radice alla foglia costituisca una parola
-    ret true:
-        se ogni parola ha un numero di vocali e consonanti che differiscono al più di uno.
-    si supponga che la parola contenga solo lettere che siano minuscole
+/*
+    Supponiamo che ogni percorso dalla radice alla foglia costituisca una parola
+ret true:
+    se ogni parola ha un numero di vocali e consonanti che differiscono al più di uno.
+si supponga che la parola contenga solo lettere che siano minuscole
 
-    */
-    // bool vocaliEConsonanti(const AlberoB<char>& a);
+*/
+bool vocaliEConsonanti(const AlberoB<char>& a) {
+    return vocaliEConsonanti(a, 0);
+}
 
+bool vocaliEConsonanti(const AlberoB<char>& a, int diff) {
+    if(a.nullo()) return (abs(diff) <= 1);
 
+    switch(a.radice()) {
+        case 'a':
+        case 'e':
+        case 'i':
+        case 'o':
+        case 'u':
+        return vocaliEConsonanti(a.figlio(SIN), diff + 1) &&
+            vocaliEConsonanti(a.figlio(DES), diff + 1);
+
+        default:
+        return vocaliEConsonanti(a.figlio(SIN), diff - 1) &&
+            vocaliEConsonanti(a.figlio(DES), diff - 1);
+    }
+
+}
