@@ -118,6 +118,12 @@ int main(int argc, char const* argv[])
     else cout << "numero diverso di foglie positive e negative\n";
     cout << endl << endl;
 
+    cout << "sommaLivelliAdiacenti(a3, max: -10): ";
+    cout << (sommaLivelliAdiacenti(a3, -10) ? "true\n" : "false\n");
+    // i risultati sono:
+    // lvl(1:2): -17  = 17 - 12 - 22
+    // lvl(2:3): -32  = -12 - 22 + 1 - 3 + 5 - 1
+
 
 
 
@@ -336,16 +342,67 @@ int posNegDifference(const AlberoB<int>& a) {
 }
 
 // restituisce true se la somma di ogni coppia di livelli adiacenti non superano il max
-// bool sommaLivelliAdiacenti(const AlberoB<int> a, int max)
+bool sommaLivelliAdiacenti(const AlberoB<int> a, int max) {
+    if(a.nullo())
+        return true;
+
+    queue<AlberoBInt> qAlberi;
+    queue<int> qLivelli;
+
+    qAlberi.push(a);
+    qLivelli.push(1);
+
+    int livelloCorrente = 1;
+
+    int sumPrec = 0, sumCurr = 0;
+
+    while(!qAlberi.empty()) {
+        // valore
+        AlberoBInt temp = qAlberi.front();
+        qAlberi.pop();
+
+        // livello (depth)
+        int livelloTmp = qLivelli.front();
+        qLivelli.pop();
+
+        if(livelloTmp > livelloCorrente) {
+            // cout << "sum prec: " << sumPrec << endl;
+            // cout << "sum curr: " << sumCurr << endl;
+            if(livelloCorrente > 1 && sumPrec > max) return false;
+            sumPrec = sumCurr;
+            sumCurr = 0;
+            livelloCorrente++;
+        }
+        sumPrec += temp.radice();
+        sumCurr += temp.radice();
 
 
-/*
-  Supponiamo che ogni percorso dalla radice alla foglia costituisca una parola
-ret true:
-    se ogni parola ha un numero di vocali e consonanti che differiscono al più di uno.
-si supponga che la parola contenga solo lettere che siano minuscole
+        if(!temp.figlio(SIN).nullo()) {
+            qAlberi.push(temp.figlio(SIN));
+            qLivelli.push(livelloTmp + 1);
+        }
+        if(!temp.figlio(DES).nullo()) {
+            qAlberi.push(temp.figlio(DES));
+            qLivelli.push(livelloTmp + 1);
+        }
+    }
+    // cout << "sum prec: " << sumPrec << endl;
+    // cout << "sum curr: " << sumCurr << endl;
 
-*/
-// bool vocaliEConsonanti(const AlberoB<char>& a);
+    return (sumPrec <= max);
+
+}
+
+
+
+
+    /*
+      Supponiamo che ogni percorso dalla radice alla foglia costituisca una parola
+    ret true:
+        se ogni parola ha un numero di vocali e consonanti che differiscono al più di uno.
+    si supponga che la parola contenga solo lettere che siano minuscole
+
+    */
+    // bool vocaliEConsonanti(const AlberoB<char>& a);
 
 
