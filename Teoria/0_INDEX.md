@@ -94,7 +94,13 @@
 ## Settimana 8
 
 - Trees *(Alberi)* [[1]](sett8/26_1_Alberi.md), [[2]](sett8/25_1_alberi.md)
+- [Trees *(Alberi)* (2)](sett9/28_1_Albero(2).md)
 - [Enum](27_2_enum.md)
+
+
+## Settimana 9
+
+- [Graphs (grafi)](sett9/28_2_Grafi.md)
 
 ## Teoria extra
 
