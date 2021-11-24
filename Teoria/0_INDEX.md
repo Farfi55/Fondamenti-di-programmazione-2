@@ -102,6 +102,7 @@
 
 - [Graphs (grafi)](sett9/28_2_Grafi.md)
 - [Rappresentazione grafi](sett9/29_1_Rappresentazione_grafi.md)
+- [visite su grafo](../Implementazioni/Grafo/visite_su_grafo.cpp)
 
 ## Teoria extra
 
@@ -121,6 +122,7 @@ ___
 - [Albero Binario](../Implementazioni/AlberoB/AlberoB.h)
   - [esempi](../Implementazioni/AlberoB/esempi.cpp)
   - [esercitazione](../Implementazioni/AlberoB/main.cpp)
+- [Grafo](../Implementazioni/Grafo/Grafo.h)
 
 ___
 

@@ -5,8 +5,7 @@
 Vector di puntatori
 di grandezza n che contiene i nodi
 
-
-Matrice di adiacenza n x n 
+Matrice di adiacenza n x n
 
 |     | 0   | 1   | 2   | 3   | 4   | 5   |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -67,7 +66,6 @@ Rappresentazione con la matrice di adiacenza
 Quando il grafo è sparso:
 Rappresentazione a liste di adiacenza
 
-
 ___
 
 ```text
@@ -84,4 +82,3 @@ GrafoNorL <- GrafoNor, ListeAd
 GrafoOrM  <- GrafoOr,  MatriceAd
 GrafoNorM <- GrafoNor, MatriceAd
 ```
-
