@@ -101,6 +101,7 @@
 ## Settimana 9
 
 - [Graphs (grafi)](sett9/28_2_Grafi.md)
+- [Rappresentazione grafi](sett9/29_1_Rappresentazione_grafi.md)
 
 ## Teoria extra
 
