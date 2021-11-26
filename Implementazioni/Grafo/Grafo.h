@@ -1,57 +1,92 @@
+// implementazione prof
+
+#ifndef GRAFO_H_
+#define GRAFO_H_
+
+#include <cassert>
 #include <vector>
-using std::vector;
 
-// TODO implementare
-// bonus: scrivere la versione con liste di adiacenza
-
-typedef vector<bool> vectorB;
-// grafo con matrice di adiacenza
+using boolVec = std::vector<bool>;
+#include<iostream>
+using namespace std;
+// grafo orientato
+// (i,j) != (j,i)
 class Grafo {
 protected:
+    // numero di nodi, numero di archi
+    unsigned vn = 0, vm = 0;
 
-    vector<vectorB> archi;
+    // matrice di adiacenza
+    std::vector<boolVec> archi;  // vector<vector<bool>> (i,j) == true => esiste un arco da i verso j
 
-    // vn: numero nodi
-    // vm: numero archi
-    int vn, vm;
+    // inizializza la matrice di adiacenza
+    void init(unsigned n) {
+        this->vn = n;
+        this->vm = 0;
+
+        this->archi = std::vector<boolVec>(n);
+        for(unsigned i = 0; i < n; i++)
+            this->archi[i] = boolVec(n, false);
+    }
 
 public:
-    Grafo(int n);
-    void operator()(int i, int j, bool b);
-    bool operator()(int i, int j) const;
+    Grafo(unsigned n) {
+        assert(n >= 1);
+        this->init(n);
+    }
 
-    int n() const { return vn; }
-    int m() const { return vm; }
+    // inserisce o elimina l'arco (i,j) (a seconda del valore di b)
+    void operator()(unsigned i, unsigned j, bool b) {
+        assert(i >= 0 && i < this->n() && j >= 0 && j < this->n());
+        bool esisteArco = this->archi[i][j];
+        if((!esisteArco && b) || (esisteArco && !b)) {
+            this->archi[i][j] = b;  // arco i->j
+            //this->archi[j][i] = b; // arco j->i (rende il grafo non orientato)
+            if(b)
+                vm++;
+            else
+                vm--;
+        }
+    }
+
+    // elimina tutti gli archi
+    void svuota() {
+        for(unsigned i = 0; i < this->n(); i++)
+            for(unsigned j = 0; j < this->n(); j++) {
+                archi[i][j] = false;
+                //archi[j][i] = false;
+            }
+        vm = 0;
+    }
+
+    Grafo& operator=(const Grafo& g) {
+        if(this == &g)
+            return *this;
+        this->init(g.n());
+        for(unsigned i = 0; i < this->n(); i++)
+            for(unsigned j = 0; j < this->n(); j++)
+                if(g(i, j))
+                    this->archi[i][j] = true;
+                else
+                    this->archi[i][j] = false;
+        return *this;
+    }
 
 
+    unsigned n() const { return vn; }
+    unsigned m() const { return vm; }
+    // true se l'arco (i,j) esiste, altrimenti false
+    bool operator()(unsigned i, unsigned j) const {
+        assert(i >= 0 && i < this->n() && j >= 0 && j < this->n());
+        return this->archi[i][j];
+    }
+
+    void stampa() {
+        for(unsigned i = 0; i < this->n(); i++)
+            for(unsigned j = 0; j < this->n(); j++)
+                cout << "(" << i << " " << j << ") = " << archi[i][j] << " ";
+
+    }
 };
 
-
-vector<int> numAdiacenti(const Grafo& g) {
-    vector<int> grado(g.n());
-
-    for(int i = 0; i < g.n(); i++) {
-        grado[i] = 0;
-        for(int j = 0; j < g.n(); j++) {
-            if(i != j && g(i, j)) // i diverso da j ed esiste un collegamento da i a j
-                grado[i]++;
-        }
-    }
-    return grado;
-}
-
-// ricevuto un grafo orientato, restituisca un grafo non orientato
-Grafo toNonOrientato(const Grafo& g) {
-    Grafo gnor(g.n());
-
-    for(int i = 0; i < g.n(); i++) {
-        for(int j = 0; j < g.n(); j++) {
-            if(i != j && g(i, j)) { // i diverso da j ed esiste un collegamento da i a j
-                gnor(i, j) = true;
-                gnor(j, i) = true;
-            }
-        }
-    }
-
-    return gnor;
-}
+#endif
