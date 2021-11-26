@@ -14,6 +14,8 @@ z
 
 #include <vector>
 #include <queue>
+#include <list>
+#include <iostream>
 using namespace std;
 
 
@@ -28,6 +30,29 @@ void bfs(int s, const Grafo& g, vector<bool>& visitati);
 
 int main(int argc, char const* argv[])
 {
+    int n, u, v;
+    cin >> n;
+    Grafo g(n);
+
+    while(cin.good()) {
+        cin >> u;
+        if(u == -1) break;
+        cin >> v;
+
+        g(u, v, true);
+    }
+
+    for(int i = 0; i < g.n(); i++) {
+        cout << "archi di " << i << ":\n";
+        for(int j = 0; j < g.n(); j++) {
+            if(i != j && g(i, j))
+                cout << "(" << i << ", " << j << ") ";
+        }
+        cout << endl;
+
+    }
+
+
 
     return 0;
 }
@@ -49,6 +74,30 @@ void dfs(int s, const Grafo& g, vector<bool>& visitati)
         if(s != j && g(s, j) && !visitati[j])
             dfs(j, g, visitati);
 }
+
+
+
+
+// chiusura transitiva
+Grafo chiusuraTransitiva(const Grafo& g)
+{
+    // implementazione in O(n^3)
+
+    Grafo g_chiusura_transitiva(g.n());
+
+    for(int i = 0; i < g.n(); i++) {
+        vector<bool> visitati(g.n(), false);
+        dfs(i, g, visitati);
+        for(int j = 0; j < g.n(); j++) {
+            if(i != j && visitati[j])
+                g_chiusura_transitiva(i, j, true);
+        }
+    }
+
+    return g_chiusura_transitiva;
+}
+
+
 
 
 // retituisce per ogni nodo il predecessore
@@ -73,35 +122,11 @@ vector<int> bfs(int s, const Grafo& g)
         for(int v = 0; v < g.n(); v++)
             if(v != u && g(u, v) && !visitati[v]) {
                 visitati[v] = true;
-                prev[v] = u;
+                prec[v] = u;
                 q.push(v);
             }
     }
 
     return prec;
 
-}
-
-
-
-void visitaPerLivelli(const AlberoB<int>& a) {
-    if(a.nullo())
-        return;
-
-    std::queue<AlberoBInt> q;
-    q.push(a);
-
-    while(!q.empty()) {
-        AlberoBInt temp = q.front(); // q.front() restituisce l'oggetto in 
-//testa alla coda SENZA RIMUOVERLO
-        q.pop();			 // q.pop() rimuove l'oggetto in testa alla coda
-
-// elaborare l'albero temp
-        std::cout << temp.radice() << ' ';
-
-        if(!temp.figlio(SIN).nullo())
-            q.push(temp.figlio(SIN));
-        if(!temp.figlio(DES).nullo())
-            q.push(temp.figlio(DES));
-    }
 }
