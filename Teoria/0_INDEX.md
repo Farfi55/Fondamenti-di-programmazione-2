@@ -102,7 +102,13 @@
 
 - [Graphs (grafi)](sett9/28_2_Grafi.md)
 - [Rappresentazione grafi](sett9/29_1_Rappresentazione_grafi.md)
-- [visite su grafo](../Implementazioni/Grafo/visite_su_grafo.cpp)
+- [visite su grafo](../Esercizi/sett9/eser_grafi/VisiteSuGrafo.cpp)
+  
+## Settimana 10
+
+- [tipi di problemi](sett10/30_1_tipi_di_problema.md)
+- [Tecnica golosa *(greedy)*](sett10/30_2_Golosa.md)
+- [Problema bella bisaccia *(Knapsack)*](sett10/30_3_problema_della_bisaccia.md)
 
 ## Teoria extra
 
