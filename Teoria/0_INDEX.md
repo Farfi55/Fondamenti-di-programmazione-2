@@ -110,6 +110,10 @@
 - [Tecnica golosa *(greedy)*](sett10/30_2_Golosa.md)
 - [Problema bella bisaccia *(Knapsack)*](sett10/30_3_problema_della_bisaccia.md)
 
+## Settimana 11
+
+- [Backtracking](sett11/33_1_Backtracking.md)
+
 ## Teoria extra
 
 - [Uniform Initialization *(Inizializzazione uniforme)*](extra/Uniform_Initialization.md)
