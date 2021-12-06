@@ -1,13 +1,12 @@
 #include <iostream>
 #include "GrafoNonOrientato.h"
-
+#include "..\..\..\Implementazioni\Grafo\non_orientato\GrafoNonOrientato.h"
 using namespace std;
 
 void stampaGrafo(const GrafoNonOrientato& g);
 int getNodoGradoMassimo(const GrafoNonOrientato& g);
 bool almenoUnNodoAdiacenteATutti(const GrafoNonOrientato& g);
 int gradoNodo(const GrafoNonOrientato& g, int nodo);
-
 
 int main(int argc, char const* argv[])
 {

@@ -20,7 +20,7 @@ using namespace std;
 
 
 
-#include "Grafo.h"
+#include "../../../Implementazioni/Grafo/Grafo.h"
 
 void dfs(int s, const Grafo& g, vector<bool>& visitati);
 void bfs(int s, const Grafo& g, vector<bool>& visitati);
