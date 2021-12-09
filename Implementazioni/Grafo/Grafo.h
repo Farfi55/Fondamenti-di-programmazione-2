@@ -1,14 +1,19 @@
 // implementazione prof
 
-#ifndef GRAFO_H_
+// si può utilizzare l'istruzione del preprocessore
+// #pragma once 
+// per effettuare la stessa cosa
+// di queste 2 righe + #endif
+#ifndef GRAFO_H_ 
 #define GRAFO_H_
 
+#include <iostream>
 #include <cassert>
 #include <vector>
 
-using boolVec = std::vector<bool>;
-#include<iostream>
 using namespace std;
+using boolVec = std::vector<bool>;
+
 // grafo orientato
 // (i,j) != (j,i)
 class Grafo {
