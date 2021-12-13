@@ -5,6 +5,8 @@
 
 using namespace std;
 
+// TODO FINIRE
+
 struct Soluzione
 {
     uint8_t mappa[9][9];
