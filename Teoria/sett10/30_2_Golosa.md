@@ -2,8 +2,6 @@
 
 brute force *(provarle tutte)*
 
-<!-- TODO esercizio: dato n generare tutte le combinazioni {0, 1} di n bit usando il brute force-->
-
 gli algoritmi che usano la tecnica golosa sono spesso approssimativi
 
 per ogni stadio della scelta golosa:
