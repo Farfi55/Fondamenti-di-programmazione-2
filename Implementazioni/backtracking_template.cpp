@@ -1,5 +1,3 @@
-#pragma once
-
 #include <vector>
 #include <iostream>
 
@@ -10,20 +8,24 @@ struct Soluzione {
     // data
     int n;
 
+
+    Soluzione(int _n) : n(_n) {}
 };
 
 
 bool solve(Soluzione& sol);
-bool canAdd(/*CHANGE TYPE*/int x, Soluzione& sol);
-bool isComplete(Soluzione& sol);
+bool canAdd(int x, const Soluzione& sol);
+bool isComplete(const Soluzione& sol);
 
 
-void add(/*CHANGE TYPE*/int x, Soluzione& sol);
+void add(int x, Soluzione& sol);
 void remove(Soluzione& sol);
 
 
 int main(int argc, char const* argv[])
 {
+    Soluzione sol();
+
 
     return 0;
 }
