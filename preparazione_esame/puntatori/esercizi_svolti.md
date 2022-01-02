@@ -149,7 +149,19 @@ ___
 ### 7. Write a function that returns a pointer to the maximum value of an array of double's.  If the array is empty, return NULL.
 
 ```cpp
-double* maximum(double* a, int size);
+double* maximum(double* a, int size){
+	if(size == 0) return 0;
+
+	int max = INT_MIN;
+	int max_idx;
+	for(int i = 0; i < size; i++){
+		if(*(a + i) > max){
+			max = *(a + i);
+			max_idx = i;
+		}
+	}
+	return (a + i);
+}
 ```
 
 ___
@@ -158,7 +170,11 @@ ___
 
 ```cpp
 // WRITE YOUR CODE HERE
-
+int myStrLen(char* cstring){
+	int i = 0;
+	while(*(cstring + i)) ++i;
+	return i;
+}
 ```
 
 ___
@@ -167,7 +183,14 @@ ___
 
 ```cpp
 // WRITE YOUR CODE HERE
-
+bool contains(char* cstring, char c){
+	char val = *(cstring);
+	while(val){
+		if(val == c) return true;
+		val = *(++cstring);
+	}
+	return false;
+}
 ```
 
 ___
@@ -177,14 +200,20 @@ ___
 ```cpp
 int main()
 {
-char s[10] = "abcde";
-revString(s);  // call the function
-return 0;
+	char s[10] = "abcde";
+	revString(s);  // call the function
+	return 0;
 }
 
 void revtString(char* ptr)
 {
 // WRITE YOUR CODE HERE
+	int n = strlen(ptr);
+	for(int i = 0; i * 2 < n; i++) {
+		char tmp = *(ptr + i);
+		*(ptr + i) = *(ptr + n - 1 - i);
+		*(ptr + n - 1 - i) = tmp;
+	}
 }
 ```
 
