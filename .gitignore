@@ -4,7 +4,7 @@
 /cmake-build-debug
 /CMakeLists.txt
 /misc
-/*.pdf
+*.pdf
 /*.html
 
 *test*
