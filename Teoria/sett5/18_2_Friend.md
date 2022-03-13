@@ -111,3 +111,12 @@ possiamo usare il prototipo di classe
 	}
 	#endif 
 	```
+
+	oppure
+
+	```cpp
+	#pragma once
+	class nomeClasse{
+		...
+	}
+	```

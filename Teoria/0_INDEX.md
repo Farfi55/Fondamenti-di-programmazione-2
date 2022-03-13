@@ -27,7 +27,7 @@
 ## Settimana 3
 
 - [C Strings](.\sett3\9_1_c_strings.cpp)
-- [Complessità](.\sett3\9_2_complessità.md)
+- [Complessità](./sett3/9_2_complessità.md)
 - [Ricerca e ordinamento](sett3\10_1_ricerca_e_ordinamento.cpp)
 - [Ordinamento](./sett3/10_3_Ordinamento.cpp)
     <!-- - [ordinare un array di int](./sett3/10_4_ordinare_un_array_di_int.cpp) -->
